@@ -20,6 +20,7 @@ body {
     display: table-cell;
     text-align: center;
     vertical-align: middle;
+    color: white;
 }
 
 .text-vertical-center h1 {
@@ -27,6 +28,7 @@ body {
     padding: 0;
     font-size: 4.5em;
     font-weight: 700;
+    color: white;
 }
 
 /* Custom Button Styles */
@@ -155,7 +157,8 @@ hr.small {
     position: relative;
     width: 100%;
     height: 100%;
-    background: url(../img/bg.jpg) no-repeat center center scroll;
+    /*background: url(../img/bg.jpg) no-repeat center center scroll;*/
+    background: url(../img/blue-gradient-1024x768.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -165,13 +168,31 @@ hr.small {
 /* About */
 
 .about {
-    padding: 50px 0;
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /*background: url(../img/bg.jpg) no-repeat center center scroll;*/
+    background: url(../img/blue-gradient-1024x768-Flipped.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
 
 /* Services */
 
 .services {
-    padding: 50px 0;
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /*background: url(../img/bg.jpg) no-repeat center center scroll;*/
+    background: url(../img/blue-gradient-1024x768.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
 
 .service-item {
@@ -195,7 +216,16 @@ hr.small {
 /* Portfolio */
 
 .portfolio {
-    padding: 50px 0;
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /*background: url(../img/bg.jpg) no-repeat center center scroll;*/
+    background: url(../img/blue-gradient-1024x768-Flipped.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
 
 .portfolio-item {
@@ -236,4 +266,31 @@ hr.small {
 
 footer {
     padding: 100px 0;
+}
+
+
+
+
+/*personal additions*/
+
+.col-lg-12 {
+    width: 100%;
+    color: white;
+}
+
+.contact {
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /*background: url(../img/bg.jpg) no-repeat center center scroll;*/
+    background: url(../img/blue-gradient-1024x768.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.text-muted {
+    color: white;
 }
