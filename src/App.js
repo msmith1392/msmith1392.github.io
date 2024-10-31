@@ -16,12 +16,7 @@ const App = () => {
         <Route 
           path="/" 
           element={
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-            >
+            <motion.div>
               <About />
             </motion.div>
           } 
@@ -29,12 +24,7 @@ const App = () => {
         <Route 
           path="/work-experience" 
           element={
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-            >
+            <motion.div>
               <WorkExperience />
             </motion.div>
           } 
@@ -42,17 +32,12 @@ const App = () => {
         <Route 
           path="/contact" 
           element={
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-            >
+            <motion.div>
               <Contact />
             </motion.div>
           } 
         />
-        <Route path="*" element={<h2>404 Not Found</h2>} /> {/* Optional: 404 page */}
+        <Route path="*" element={<h2>404 Not Found</h2>} />
       </Routes>
       <Footer />
     </Router>
