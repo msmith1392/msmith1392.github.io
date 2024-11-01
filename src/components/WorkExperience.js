@@ -3,9 +3,10 @@ import React from 'react';
 const WorkExperience = () => {
   const experiences = [
     {
-        jobTitle: "Mid-level Software Developer",
-        company: "4 Arrows Consulting Inc.",
-        duration: "March 2019 - Present",
+      jobTitle: "Mid-level Software Developer",
+      company: "4 Arrows Consulting Inc.",
+      startDate: "March 2019",
+      endDate: "Present",
         description: 
             "In 2019, Mr. Smith accepted a position as a Software Engineer. " +
             "Completed work for PrepToolkit Unified Reporting Tool (URT), REP Exercises, and HSEEP Exercises. " +
@@ -18,7 +19,8 @@ const WorkExperience = () => {
     {
         jobTitle: "Applications Developer",
         company: "Previous Company Name",
-        duration: "March 2017 - March 2019",
+        startDate: "March 2017",
+        endDate: "March 2019",
         description: 
             "Applications Developer on a team maintaining an application for ground transportation logistics. " +
             "Supported full systems life cycle management (analyses, technical requirements, design, coding, testing, implementation). " +
@@ -29,7 +31,8 @@ const WorkExperience = () => {
     {
         jobTitle: "Software Developer",
         company: "Apax Software",
-        duration: "March 2016 - March 2017",
+        startDate: "March 2016",
+        endDate: "March 2017",
         description: 
             "Notable Django projects for Apax’s biggest client: Presbyterian Church (U.S.A). " +
             "Included custom-built tools: CMS tool, event registration system, nominations handling system, online survey system. " +
@@ -41,7 +44,8 @@ const WorkExperience = () => {
     {
         jobTitle: "Programming Analyst",
         company: "Knowledge Facilitations Group (KFG), Richmond KY",
-        duration: "March 2015 - March 2016",
+        startDate: "March 2015",
+        endDate: "March 2016",
         description: 
             "Team member on KFG’s Electronic Data Interchange (EDI) platform known as EDITRACE. " +
             "Created backend Python components for Translations, Validations, and Mapping Engine. " +
@@ -52,20 +56,26 @@ const WorkExperience = () => {
 ]
 ;
 
-  return (
-    <section>
-      <h2>Work Experience</h2>
-      <ul>
-        {experiences.map((experience, index) => (
-          <li key={index}>
-            <h3>{experience.jobTitle} at {experience.company}</h3>
-            <p>{experience.duration}</p>
-            <p>{experience.description}</p>
-          </li>
-        ))}
-      </ul>
-    </section>
-  );
+const calculateDuration = (start, end) => {
+  const startYear = parseInt(start.split(" ")[1]);
+  const endYear = end === "Present" ? new Date().getFullYear() : parseInt(end.split(" ")[1]);
+  return endYear - startYear;
+};
+
+return (
+  <section>
+    <h2>Work Experience</h2>
+    <ul>
+      {experiences.map((experience, index) => (
+        <li key={index}>
+          <h3>{experience.jobTitle} at {experience.company}</h3>
+          <p>{experience.startDate} - {experience.endDate} ({calculateDuration(experience.startDate, experience.endDate)} years)</p>
+          <p>{experience.description}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+);
 };
 
 export default WorkExperience;
