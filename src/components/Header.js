@@ -1,28 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import NavBar from './NavBar';
 
 const Header = () => (
   <header>
     <h1>Matthew Smith</h1>
     <p>Software Developer</p>
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">About</Link>
-        </li>
-        <li>
-          <Link to="/work-experience">Work Experience</Link>
-        </li>
-        <li>
-          <Link to="/contact">Contact</Link>
-        </li>
-        <li>
-          <a href="/resume.pdf" download style={{ textDecoration: 'none', color: '#007BFF' }}>
-            Download Resume
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <NavBar />
   </header>
 );
 
