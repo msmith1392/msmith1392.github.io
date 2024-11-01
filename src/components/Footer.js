@@ -20,6 +20,11 @@ const Footer = () => {
           <li>
             <Link to="/contact" onClick={scrollToTop}>Contact</Link>
           </li>
+          <li>
+            <a href="/resume.pdf" download style={{ textDecoration: 'none', color: '#007BFF' }}>
+              Download Resume
+            </a>
+          </li>
         </ul>
       </nav>
       <p>&copy; {new Date().getFullYear()} Matthew Smith</p>

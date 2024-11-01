@@ -16,6 +16,11 @@ const Header = () => (
         <li>
           <Link to="/contact">Contact</Link>
         </li>
+        <li>
+          <a href="/resume.pdf" download style={{ textDecoration: 'none', color: '#007BFF' }}>
+            Download Resume
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
