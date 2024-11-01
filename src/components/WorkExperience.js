@@ -5,20 +5,22 @@ const WorkExperience = () => {
     {
       jobTitle: "Mid-level Software Developer",
       company: "4 Arrows Consulting Inc.",
+      companyLocation: "Somerset, KY",
       startDate: "March 2019",
       endDate: "Present",
-        description: 
-            "In 2019, Mr. Smith accepted a position as a Software Engineer. " +
-            "Completed work for PrepToolkit Unified Reporting Tool (URT), REP Exercises, and HSEEP Exercises. " +
-            "Participates in code design, review, and architecture efforts for assigned systems. " +
-            "Utilizes code repositories, CM controls, and other engineering processes. " +
-            "Performs unit testing and system-level analysis/testing when required. " +
-            "Conducts requirements, defect, and enhancement analysis, including proposed solutions and effort estimates. " +
-            "Skills/Tools used: Java/Spring Framework, Apache HTTP Server, Google Web Toolkit, Liferay7, MySQL."
+      description: 
+          "In 2019, Mr. Smith accepted a position as a Software Engineer. " +
+          "Completed work for PrepToolkit Unified Reporting Tool (URT), REP Exercises, and HSEEP Exercises. " +
+          "Participates in code design, review, and architecture efforts for assigned systems. " +
+          "Utilizes code repositories, CM controls, and other engineering processes. " +
+          "Performs unit testing and system-level analysis/testing when required. " +
+          "Conducts requirements, defect, and enhancement analysis, including proposed solutions and effort estimates. " +
+          "Skills/Tools used: Java/Spring Framework, Apache HTTP Server, Google Web Toolkit, Liferay7, MySQL."
     },
     {
         jobTitle: "Applications Developer",
         company: "United Parcel Service (UPS)",
+        companyLocation: "Louisville, KY",
         startDate: "March 2017",
         endDate: "March 2019",
         description: 
@@ -31,6 +33,7 @@ const WorkExperience = () => {
     {
         jobTitle: "Software Developer",
         company: "Apax Software",
+        companyLocation: "Lexington, KY",
         startDate: "March 2016",
         endDate: "March 2017",
         description: 
@@ -43,7 +46,8 @@ const WorkExperience = () => {
     },
     {
         jobTitle: "Programming Analyst",
-        company: "Knowledge Facilitations Group (KFG), Richmond KY",
+        company: "Knowledge Facilitations Group (KFG)",
+        companyLocation: "Richmond, KY",
         startDate: "March 2015",
         endDate: "March 2016",
         description: 
@@ -53,29 +57,28 @@ const WorkExperience = () => {
             "Analyzed the EDI process in real-time production environments with other developers to discover and fix transaction errors. " +
             "Implemented a web-based console that allows users to inspect any aspect of the EDI process."
     }
-]
-;
+  ];
 
-const calculateDuration = (start, end) => {
-  const startYear = parseInt(start.split(" ")[1]);
-  const endYear = end === "Present" ? new Date().getFullYear() : parseInt(end.split(" ")[1]);
-  return endYear - startYear;
-};
+  const calculateDuration = (start, end) => {
+    const startYear = parseInt(start.split(" ")[1]);
+    const endYear = end === "Present" ? new Date().getFullYear() : parseInt(end.split(" ")[1]);
+    return endYear - startYear;
+  };
 
-return (
-  <section>
-    <h2>Work Experience</h2>
-    <ul>
-      {experiences.map((experience, index) => (
-        <li key={index}>
-          <h3>{experience.jobTitle} at {experience.company}</h3>
-          <p>{experience.startDate} - {experience.endDate} ({calculateDuration(experience.startDate, experience.endDate)} years)</p>
-          <p>{experience.description}</p>
-        </li>
-      ))}
-    </ul>
-  </section>
-);
+  return (
+    <section>
+      <h2>Work Experience</h2>
+      <ul>
+        {experiences.map((experience, index) => (
+          <li key={index}>
+            <h3>{experience.jobTitle} at {experience.company}, {experience.companyLocation}</h3>
+            <p>{experience.startDate} - {experience.endDate} ({calculateDuration(experience.startDate, experience.endDate)} years)</p>
+            <p>{experience.description}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
 };
 
 export default WorkExperience;
