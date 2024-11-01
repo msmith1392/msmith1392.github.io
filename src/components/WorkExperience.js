@@ -77,6 +77,9 @@ const WorkExperience = () => {
           </li>
         ))}
       </ul>
+      <a href="/resume.pdf" download>
+        <button>Download Resume</button>
+      </a>
     </section>
   );
 };
