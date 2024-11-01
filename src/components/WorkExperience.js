@@ -18,7 +18,7 @@ const WorkExperience = () => {
     },
     {
         jobTitle: "Applications Developer",
-        company: "Previous Company Name",
+        company: "United Parcel Service (UPS)",
         startDate: "March 2017",
         endDate: "March 2019",
         description: 
