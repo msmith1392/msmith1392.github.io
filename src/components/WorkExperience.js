@@ -1,4 +1,5 @@
 import React from 'react';
+import FadeInSection from './FadeInSection';
 
 const WorkExperience = () => {
   const experiences = [
@@ -67,16 +68,18 @@ const WorkExperience = () => {
 
   return (
     <section>
-      <h2>Work Experience</h2>
-      <ul>
-        {experiences.map((experience, index) => (
-          <li key={index}>
-            <h3>{experience.jobTitle} at {experience.company}, {experience.companyLocation}</h3>
-            <p>{experience.startDate} - {experience.endDate} ({calculateDuration(experience.startDate, experience.endDate)} years)</p>
-            <p>{experience.description}</p>
-          </li>
-        ))}
-      </ul>
+      <FadeInSection>
+        <h2>Work Experience</h2>
+        <ul>
+          {experiences.map((experience, index) => (
+            <li key={index}>
+              <h3>{experience.jobTitle} at {experience.company}, {experience.companyLocation}</h3>
+              <p>{experience.startDate} - {experience.endDate} ({calculateDuration(experience.startDate, experience.endDate)} years)</p>
+              <p>{experience.description}</p>
+            </li>
+          ))}
+        </ul>
+      </FadeInSection>
     </section>
   );
 };

@@ -1,9 +1,11 @@
 import React from 'react';
+import FadeInSection from './FadeInSection';
 
 const About = () => {
   return (
     <section>
-      <h2>About Me</h2>
+      <FadeInSection>
+        <h2>About Me</h2>
       <p>
         I am a software developer with over 5 years of experience in developing software applications, primarily focusing on Java. Since joining 4 Arrows Consulting in 2019, I have contributed significantly to various projects, including the PrepToolkit Unified Reporting Tool (URT).
       </p>
@@ -27,6 +29,7 @@ const About = () => {
       <p>
         I am passionate about leveraging technology to solve complex problems and continuously improving my skills in the field.
       </p>
+      </FadeInSection>
     </section>
   );
 };
