@@ -43,12 +43,10 @@ header p {
 /* Footer Styles */
 footer {
   text-align: center;
-  padding: 10px;
+  padding: 20px;
   background: #2980b9;
   color: white;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+  border-top: 4px solid #2c3e50;
 }
 
 /* Section Styles */
