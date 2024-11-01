@@ -3,7 +3,7 @@ import React from 'react';
 const WorkExperience = () => {
   const experiences = [
     {
-      jobTitle: "Mid-level Software Developer",
+      jobTitle: "Mid-level Software Engineer",
       company: "4 Arrows Consulting Inc.",
       companyLocation: "Somerset, KY",
       startDate: "March 2019",
