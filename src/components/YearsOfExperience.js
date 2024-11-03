@@ -17,7 +17,7 @@ const calculateYearsOfExperience = (startDate) => {
 
 const YearsOfExperience = ({ startDate }) => {
   const years = calculateYearsOfExperience(startDate);
-  return <span>{years} years of experience</span>;
+  return <span>{years}</span>;
 };
 
 export default YearsOfExperience;
