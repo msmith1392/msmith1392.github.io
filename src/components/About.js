@@ -1,14 +1,16 @@
 import React from 'react';
 import FadeInSection from './FadeInSection';
-import YearsOfExperience from './YearsOfExperience';
+import useYearsOfExperience from '../hooks/useYearsOfExperience';
 
-const About = ({ yearsOfExperience }) => {
+const About = () => {
+  const yearsOfExperience = useYearsOfExperience('2015-03-01');
+
   return (
     <section>
       <FadeInSection>
         <h2>About Me</h2>
       <p>
-        I am a software developer with over <YearsOfExperience startDate="2015-03-01" /> years of experience in developing software applications, primarily focusing on Java. Since joining 4 Arrows Consulting in 2019, I have contributed significantly to various projects, including the PrepToolkit Unified Reporting Tool (URT).
+        I am a software developer with over { yearsOfExperience } years of experience in developing software applications, primarily focusing on Java. Since joining 4 Arrows Consulting in 2019, I have contributed significantly to various projects, including the PrepToolkit Unified Reporting Tool (URT).
       </p>
       <p>
         My key contributions include:
