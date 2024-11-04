@@ -1,91 +1,26 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
-  }
-  
-h1, h2, h3 {
-  color: #2c3e50;
-  margin-bottom: 10px;
+/* Custom styles for the navbar */
+.navbar {
+  background-color: #2980b9; /* A nice blue color */
+}
+
+.navbar .nav-link {
+  color: white !important; /* Change link color to white */
+}
+
+.navbar .nav-link:hover {
+  color: #ffd700 !important; /* Gold color on hover */
+}
+
+.navbar-toggler {
+  border-color: white; /* White border for the toggler */
+}
+
+.navbar-toggler-icon {
+  background-color: white; /* White icon for toggler */
 }
 
 section {
-  background: #fff;
-  margin: 20px auto;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
-}
-
-/* Header Styles */
-header {
-  text-align: center;
-  padding: 20px;
-  background: #2980b9;
-  color: white;
-  border-bottom: 4px solid #2c3e50;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-}
-
-header p {
-  font-size: 1.2rem;
-}
-
-/* Footer Styles */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #2980b9;
-  color: white;
-  border-top: 4px solid #2c3e50;
-}
-
-/* Section Styles */
-ul {
-  list-style-type: disc;
-  margin-left: 20px;
-}
-
-/* Link Styles */
-a {
-  color: #2980b9;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-nav {
-  background-color: #e2f0d9; /* Soft green */
-  padding: 1rem;
-}
-
-nav ul {
-  list-style-type: none; /* Remove bullets */
-  padding: 0; /* Remove default padding */
-}
-
-nav li {
-  display: inline; /* Display list items in a row */
-  margin-right: 20px; /* Space between links */
-}
-
-nav a {
-  color: #333; /* Dark gray for visibility on light backgrounds */
-}
-
-nav a:hover {
-  text-decoration: underline; /* Underline on hover */
+  background: #f8f9fa; /* Light grey background for sections */
 }
 
 .fade-in {

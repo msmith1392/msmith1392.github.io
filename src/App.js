@@ -16,7 +16,7 @@ const App = () => {
         <Route 
           path="/" 
           element={
-            <motion.div>
+            <motion.div key="about">
               <About />
             </motion.div>
           } 
@@ -24,7 +24,7 @@ const App = () => {
         <Route 
           path="/work-experience" 
           element={
-            <motion.div>
+            <motion.div key="work-experience">
               <WorkExperience />
             </motion.div>
           } 
@@ -32,7 +32,7 @@ const App = () => {
         <Route 
           path="/contact" 
           element={
-            <motion.div>
+            <motion.div key="contact">
               <Contact />
             </motion.div>
           } 

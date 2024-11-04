@@ -1,13 +1,9 @@
 import React from 'react';
 import NavBar from './NavBar';
 
-const scrollToTop = () => {
-  window.scrollTo(0, 0);
-};  
-
 const Footer = () => {
   return (
-    <footer>
+    <footer className="bg-primary text-white text-center py-3">
       <NavBar />
       <p>&copy; {new Date().getFullYear()} Matthew Smith</p>
     </footer>
