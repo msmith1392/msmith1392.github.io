@@ -10,25 +10,26 @@ const About = () => {
       <FadeInSection>
         <h2>About Me</h2>
         <p>
-          I am a software developer with over {yearsOfExperience} years of experience in developing software applications, primarily focusing on Java. Since joining 4 Arrows Consulting in 2019, I have contributed significantly to various projects, including the PrepToolkit Unified Reporting Tool (URT).
-        </p>
-        <p>My key contributions include:</p>
-        <ul className="list-unstyled">
-          <li>Assisting with the migration of THIRA/SPR, CPG, NIMS, and UAWG components from max.gov.</li>
-          <li>Supporting the ongoing development of PrepToolkit REP and HSEEP exercises.</li>
-          <li>Implementing updates and changes to PrepToolkit URT assessments for each new assessment year.</li>
-        </ul>
-        <p>
-          My responsibilities at 4 Arrows Consulting involve conducting requirements analysis, defect tracking, and enhancement proposals. I also provide level of effort estimates for implementation and participate in code design, review, and architecture efforts.
+          I’m a Software Developer with {yearsOfExperience}+ years building secure, scalable, and maintainable
+          applications across federal and private sectors. My expertise centers on Java ecosystems—
+          <strong>Spring Boot</strong>, <strong>GWT</strong>, and <strong>Quarkus</strong>—complemented by
+          <strong> Python/Django</strong> and modern frontend frameworks like <strong>Svelte</strong>, <strong>React</strong>,
+          and <strong>Angular</strong>.
         </p>
         <p>
-          Additionally, I utilize code repositories and configuration management controls, ensuring high-quality engineering processes. I perform unit-level testing and system analysis as needed.
+          For over 5 years, I’ve worked 100% remotely supporting FEMA’s <strong>PrepToolkit</strong> at 4 Arrows Consulting.
+          I contribute to key apps like the Unified Reporting Tool (URT), REP Exercises, and HSEEP, working across both legacy
+          and modern systems. This includes migrating legacy platforms from max.gov and building cloud-native backend services
+          using <strong>AWS Lambda</strong>, <strong>API Gateway</strong>, and containerized microservices with <strong>Podman</strong>.
         </p>
         <p>
-          Before joining 4 Arrows Consulting, I worked as an Applications Developer at United Parcel Service (UPS), a Web Developer at Apax Software, and a Programming Analyst at Knowledge Facilitations Group (KFG). I graduated from Eastern Kentucky University in 2015 with a bachelor's degree in Computer Science.
+          Earlier, I worked on enterprise logistics systems at <strong>UPS</strong> and full-stack web apps for nonprofit and
+          public health clients with <strong>Apax Software</strong>. I’m experienced with CMS platforms like <strong>Liferay</strong>
+          and <strong>Drupal</strong>, performance testing, and agile CI/CD pipelines.
         </p>
         <p>
-          I am passionate about leveraging technology to solve complex problems and continuously improving my skills in the field.
+          I’m open to new opportunities where I can help modernize platforms, build mission-driven software, or contribute to
+          cloud-native architecture.
         </p>
       </FadeInSection>
     </section>

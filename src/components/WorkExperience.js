@@ -4,59 +4,87 @@ import FadeInSection from './FadeInSection';
 const WorkExperience = () => {
   const experiences = [
     {
-      jobTitle: "Mid-level Software Engineer",
-      company: "4 Arrows Consulting Inc.",
-      companyLocation: "Somerset, KY",
+      jobTitle: "Mid-Level Software Engineer",
+      company: "4 Arrows Consulting (FEMA Contract – PrepToolkit)",
+      location: "Remote / Somerset, KY",
       startDate: "March 2019",
       endDate: "Present",
-      description: 
-        "In 2019, Mr. Smith accepted a position as a Software Engineer. Completed work for PrepToolkit Unified Reporting Tool (URT), REP Exercises, and HSEEP Exercises. Participates in code design, review, and architecture efforts for assigned systems. Utilizes code repositories, CM controls, and other engineering processes. Performs unit testing and system-level analysis/testing when required. Conducts requirements, defect, and enhancement analysis, including proposed solutions and effort estimates. Skills/Tools used: Java/Spring Framework, Apache HTTP Server, Google Web Toolkit, Liferay7, MySQL."
+      description: [
+        "Contributed to multiple modules of FEMA’s PrepToolkit, including the Unified Reporting Tool (URT), REP Exercises, and HSEEP.",
+        "Led enhancements and updates to URT assessment systems for each fiscal year cycle.",
+        "Supported migration of legacy components (THIRA/SPR, CPG, NIMS, UAWG) from max.gov to PrepToolkit.",
+        "Participated in architecture discussions, code reviews, and estimation for both GWT-based and serverless/Svelte modules.",
+        "Supported containerized Java microservices built with Quarkus, deployed using Podman.",
+        "Maintained high code quality using version control, CM tools, and test-driven practices."
+      ],
+      techStack: "Java, Spring Boot, Quarkus, Google Web Toolkit (GWT), MySQL, Liferay 7, Apache HTTP Server, JavaScript/TypeScript, Svelte, AWS Lambda"
     },
     {
       jobTitle: "Applications Developer",
       company: "United Parcel Service (UPS)",
-      companyLocation: "Louisville, KY",
+      location: "Louisville, KY",
       startDate: "March 2017",
       endDate: "March 2019",
-      description: 
-        "Applications Developer on a team maintaining an application for ground transportation logistics. Supported full systems life cycle management (analyses, technical requirements, design, coding, testing, implementation). Collaborated with teams for effective communication and achievement of objectives. Provided development, maintenance, and support for applications. Skills/Tools used: Java/Spring Framework, SQL Server 2016, stress testing with Apache JMeter, HP Roadrunner, WebLogic, ActiveMQ, TFVC, Git."
+      description: [
+        "Maintained and enhanced enterprise logistics systems across UPS ground operations.",
+        "Collaborated cross-functionally to implement and test new features from requirements through deployment.",
+        "Conducted system performance testing using Apache JMeter and HP Roadrunner."
+      ],
+      techStack: "Java, Spring Framework, WebLogic, ActiveMQ, SQL Server, Git, TFVC"
     },
     {
       jobTitle: "Software Developer",
       company: "Apax Software",
-      companyLocation: "Lexington, KY",
+      location: "Lexington, KY",
       startDate: "March 2016",
       endDate: "March 2017",
-      description: 
-        "Notable Django projects for Apax’s biggest client: Presbyterian Church (U.S.A). Included custom-built tools: CMS tool, event registration system, nominations handling system, online survey system. Involved in the software development lifecycle of Fit Fac-Off, a mobile web app for the University of Kentucky’s College of Public Health. Developed and executed on client projects, managing multiple tasks simultaneously. Skills used: Python/Django, JavaScript/AngularJS/jQuery, Bootstrap, SQL, Git, PHP, Drupal, WordPress, AWS."
+      description: [
+        "Developed web applications for clients including Presbyterian Church (USA) and University of Kentucky’s College of Public Health.",
+        "Built custom CMS tools, event registration systems, and online surveys using Python/Django and AngularJS.",
+        "Participated in full development lifecycle from planning to deployment."
+      ],
+      techStack: "Python, Django, JavaScript (AngularJS, jQuery), Bootstrap, AWS, GitHub, PHP, Drupal"
     },
     {
       jobTitle: "Programming Analyst",
       company: "Knowledge Facilitations Group (KFG)",
-      companyLocation: "Richmond, KY",
+      location: "Richmond, KY",
       startDate: "March 2015",
       endDate: "March 2016",
-      description: 
-        "Team member on KFG’s Electronic Data Interchange (EDI) platform known as EDITRACE. Created backend Python components for Translations, Validations, and Mapping Engine. Handled data in various formats, including XML, X12, Editfact, CSV, Excel, Tradacoms, JSON, and IDOC. Analyzed the EDI process in real-time production environments with other developers to discover and fix transaction errors. Implemented a web-based console that allows users to inspect any aspect of the EDI process."
+      description: [
+        "Developed backend components for an EDI platform (EDITRACE) using Python.",
+        "Built translation/validation tools to process data in XML, JSON, IDOC, X12, CSV, and other formats.",
+        "Created a web console for real-time transaction analysis."
+      ],
+      techStack: "Python, EDI (X12, XML, EDIFACT, Tradacoms, JSON, IDOC), Bootstrap, Git"
     }
   ];
 
   const calculateDuration = (start, end) => {
     const startYear = parseInt(start.split(" ")[1]);
     const endYear = end === "Present" ? new Date().getFullYear() : parseInt(end.split(" ")[1]);
-    return endYear - startYear;
+    const years = endYear - startYear;
+    return years === 1 ? "1 year" : `${years} years`;
   };
 
   return (
     <section className="container text-center">
       <FadeInSection>
         <h2>Work Experience</h2>
-        <ul className="list-unstyled">
-          {experiences.map((experience, index) => (
-            <li key={index} className="mb-4">
-              <h3>{experience.jobTitle} at {experience.company}, {experience.companyLocation}</h3>
-              <p>{experience.startDate} - {experience.endDate} ({calculateDuration(experience.startDate, experience.endDate)} years)</p>
-              <p>{experience.description}</p>
+        <ul className="list-unstyled text-left">
+          {experiences.map(({ jobTitle, company, location, startDate, endDate, description, techStack }, index) => (
+            <li key={index} className="mb-5">
+              <h3>{jobTitle} — {company}</h3>
+              <h5>{location}</h5>
+              <p className="mb-1">
+                {startDate} - {endDate} ({calculateDuration(startDate, endDate)})
+              </p>
+              <ul>
+                {description.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
+              <p><strong>Tech Stack:</strong> {techStack}</p>
             </li>
           ))}
         </ul>
