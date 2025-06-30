@@ -15,6 +15,7 @@ const Contact = () => {
         <ul className="list-unstyled">
           <li>Email: <a href="mailto:msmith1392@gmail.com">msmith1392@gmail.com</a></li>
           <li>GitHub: <a href="https://github.com/msmith1392" target="_blank" rel="noopener noreferrer">View My GitHub Profile</a></li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/matthew-smith-22310b111/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a></li>
           <li>Resume: <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Download PDF</a></li>
         </ul>
 
