@@ -1,47 +1,40 @@
-import React from 'react';
-import { HashRouter as Router, Route, Routes } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import Header from './components/Header';
-import About from './components/About';
-import WorkExperience from './components/WorkExperience';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import './styles/styles.css';
+import React from "react";
+import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import Header from "./components/Header";
+import About from "./components/About";
+import WorkExperience from "./components/WorkExperience";
+import Skills from "./components/Skills";
+import Education from "./components/Education";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import PageTransition from "./components/PageTransition";
+import "./styles/styles.css";
 
-const App: React.FC = () => {
+const AnimatedRoutes: React.FC = () => {
+  const location = useLocation();
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route 
-          path="/" 
-          element={
-            <motion.div key="about">
-              <About />
-            </motion.div>
-          } 
-        />
-        <Route 
-          path="/work-experience" 
-          element={
-            <motion.div key="work-experience">
-              <WorkExperience />
-            </motion.div>
-          } 
-        />
-        <Route 
-          path="/contact" 
-          element={
-            <motion.div key="contact">
-              <Contact />
-            </motion.div>
-          } 
-        />
-        <Route path="*" element={<h2>404 Not Found</h2>} />
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<PageTransition><About /></PageTransition>} />
+        <Route path="/work-experience" element={<PageTransition><WorkExperience /></PageTransition>} />
+        <Route path="/skills" element={<PageTransition><Skills /></PageTransition>} />
+        <Route path="/education" element={<PageTransition><Education /></PageTransition>} />
+        <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+        <Route path="*" element={<PageTransition><h2>404 Not Found</h2></PageTransition>} />
       </Routes>
-      <Footer />
-    </Router>
+    </AnimatePresence>
   );
 };
+
+const App: React.FC = () => (
+  <Router>
+    <Header />
+    <div className="main-content">
+      <AnimatedRoutes />
+    </div>
+    <Footer />
+  </Router>
+);
 
 export default App;
