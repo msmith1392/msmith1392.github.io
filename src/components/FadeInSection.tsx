@@ -1,17 +1,21 @@
-import React, { useEffect, useRef } from 'react';
+import React, { ReactNode, useEffect, useRef } from 'react';
 
-const FadeInSection = ({ children }) => {
-  const ref = useRef();
+type FadeInSectionProps = {
+  children: ReactNode;
+};
+
+const FadeInSection: React.FC<FadeInSectionProps> = ({ children }) => {
+  const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.disconnect(); // Stop observing after the element is visible
+        observer.disconnect();
       }
     });
 
-    const currentRef = ref.current; // Store ref.current in a variable
+    const currentRef = ref.current;
 
     if (currentRef) {
       observer.observe(currentRef);
@@ -19,7 +23,7 @@ const FadeInSection = ({ children }) => {
 
     return () => {
       if (currentRef) {
-        observer.unobserve(currentRef); // Use the stored variable here
+        observer.unobserve(currentRef);
       }
     };
   }, []);

@@ -2,7 +2,7 @@ import React from 'react';
 import FadeInSection from './FadeInSection';
 import useYearsOfExperience from '../hooks/useYearsOfExperience';
 
-const About = () => {
+const About: React.FC = () => {
   const yearsOfExperience = useYearsOfExperience('2015-03-01');
 
   return (
@@ -13,7 +13,7 @@ const About = () => {
           I’m a Software Developer with {yearsOfExperience}+ years building secure, scalable, and maintainable
           applications across federal and private sectors. My expertise centers on Java ecosystems—
           <strong>Spring Boot</strong>, <strong>GWT</strong>, and <strong>Quarkus</strong>—complemented by
-          <strong> Python/Django</strong> and modern frontend frameworks like <strong>Svelte</strong>, <strong>React</strong>,
+          <strong>Python/Django</strong> and modern frontend frameworks like <strong>Svelte</strong>, <strong>React</strong>,
           and <strong>Angular</strong>.
         </p>
         <p>

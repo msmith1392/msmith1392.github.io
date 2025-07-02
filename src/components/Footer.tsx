@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from './NavBar';
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer className="bg-primary text-white text-center py-3">
       <NavBar />

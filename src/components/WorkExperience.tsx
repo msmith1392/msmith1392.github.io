@@ -1,8 +1,18 @@
 import React from 'react';
 import FadeInSection from './FadeInSection';
 
-const WorkExperience = () => {
-  const experiences = [
+type Experience = {
+  jobTitle: string;
+  company: string;
+  location: string;
+  startDate: string;
+  endDate: string;
+  description: string[];
+  techStack: string;
+};
+
+const WorkExperience: React.FC = () => {
+  const experiences: Experience[] = [
     {
       jobTitle: "Mid-Level Software Engineer",
       company: "4 Arrows Consulting (FEMA Contract – PrepToolkit)",
@@ -60,10 +70,10 @@ const WorkExperience = () => {
     }
   ];
 
-  const calculateDuration = (start, end) => {
-    const startYear = parseInt(start.split(" ")[1]);
-    const endYear = end === "Present" ? new Date().getFullYear() : parseInt(end.split(" ")[1]);
-    const years = endYear - startYear;
+  const calculateDuration = (start: string, end: string): string => {
+    const startYear: number = parseInt(start.split(" ")[1], 10);
+    const endYear: number = end === "Present" ? new Date().getFullYear() : parseInt(end.split(" ")[1], 10);
+    const years: number = endYear - startYear;
     return years === 1 ? "1 year" : `${years} years`;
   };
 
@@ -72,19 +82,19 @@ const WorkExperience = () => {
       <FadeInSection>
         <h2>Work Experience</h2>
         <ul className="list-unstyled text-left">
-          {experiences.map(({ jobTitle, company, location, startDate, endDate, description, techStack }, index) => (
+          {experiences.map((exp: Experience, index: number) => (
             <li key={index} className="mb-5">
-              <h3>{jobTitle} — {company}</h3>
-              <h5>{location}</h5>
+              <h3>{exp.jobTitle} — {exp.company}</h3>
+              <h5>{exp.location}</h5>
               <p className="mb-1">
-                {startDate} - {endDate} ({calculateDuration(startDate, endDate)})
+                {exp.startDate} - {exp.endDate} ({calculateDuration(exp.startDate, exp.endDate)})
               </p>
               <ul>
-                {description.map((point, i) => (
+                {exp.description.map((point: string, i: number) => (
                   <li key={i}>{point}</li>
                 ))}
               </ul>
-              <p><strong>Tech Stack:</strong> {techStack}</p>
+              <p><strong>Tech Stack:</strong> {exp.techStack}</p>
             </li>
           ))}
         </ul>

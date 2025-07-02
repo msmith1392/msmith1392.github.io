@@ -8,7 +8,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './styles/styles.css';
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <Router>
       <Header />

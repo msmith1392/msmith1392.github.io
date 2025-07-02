@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import FadeInSection from './FadeInSection';
 
-const Contact = () => {
+const Contact: React.FC = () => {
   // useState to manage the form visibility state
-  const [isFormOpen, setIsFormOpen] = useState(false);
+  const [isFormOpen, setIsFormOpen] = useState<boolean>(false);
 
   // Function to toggle the form visibility
-  const toggleForm = () => setIsFormOpen(!isFormOpen);
+  const toggleForm = (): void => setIsFormOpen(!isFormOpen);
   
   return (
     <section className="container text-center">
@@ -43,7 +43,7 @@ const Contact = () => {
               </div>
               <div className="mb-3">
                 <label htmlFor="message" className="form-label">Message</label>
-                <textarea className="form-control" id="message" rows="4" required></textarea>
+                <textarea className="form-control" id="message" rows={4} required></textarea>
               </div>
 
               {/* Disabled Submit Button */}

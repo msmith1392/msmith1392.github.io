@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
-const useYearsOfExperience = (startDate) => {
-  const [years, setYears] = useState(0);
+const useYearsOfExperience = (startDate: string): number => {
+  const [years, setYears] = useState<number>(0);
 
   useEffect(() => {
-    const calculateYears = () => {
+    const calculateYears = (): number => {
       const currentDate = new Date();
       const start = new Date(startDate);
       let years = currentDate.getFullYear() - start.getFullYear();

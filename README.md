@@ -1,3 +1,18 @@
+# Matthew Smith – Portfolio & Resume Site
+
+This is my personal website and interactive resume, built with **React** and **TypeScript**.  
+It showcases my experience, skills, and work history, and demonstrates my ability to build modern web apps.
+
+**Live site:** [https://msmith1392.github.io](https://msmith1392.github.io)
+
+## Tech Stack
+
+- React
+- TypeScript
+- Bootstrap
+- React Router
+- Framer Motion
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
