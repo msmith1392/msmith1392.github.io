@@ -9,6 +9,7 @@ import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import PageTransition from "./components/PageTransition";
+import ScrollToTop from "./components/ScrollToTop";
 import "./styles/styles.css";
 
 const AnimatedRoutes: React.FC = () => {
@@ -29,6 +30,7 @@ const AnimatedRoutes: React.FC = () => {
 
 const App: React.FC = () => (
   <Router>
+    <ScrollToTop />
     <Header />
     <div className="main-content">
       <AnimatedRoutes />
