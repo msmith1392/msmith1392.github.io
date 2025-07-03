@@ -14,20 +14,26 @@ type Experience = {
 const WorkExperience: React.FC = () => {
   const experiences: Experience[] = [
     {
-      jobTitle: "Mid-Level Software Engineer",
-      company: "4 Arrows Consulting (FEMA Contract – PrepToolkit)",
+      jobTitle: "Software Engineer",
+      company: "4 Arrows Consulting (FEMA Contract - PrepToolkit)",
       location: "Remote / Somerset, KY",
       startDate: "March 2019",
       endDate: "Present",
       description: [
-        "Contributed to multiple modules of FEMA’s PrepToolkit, including the Unified Reporting Tool (URT), REP Exercises, and HSEEP.",
+        "Contributed to multiple modules of FEMA's PrepToolkit, including the Unified Reporting Tool (URT), " +
+        "Radiological Emergency Preparedness Program (REPP) Exercises, and supporting local, regional, federal, " +
+        "and private sector partners with Homeland Security Exercise and Evaluation Program (HSEEP) Exercises.",
         "Led enhancements and updates to URT assessment systems for each fiscal year cycle.",
-        "Supported migration of legacy components (THIRA/SPR, CPG, NIMS, UAWG) from max.gov to PrepToolkit.",
+        "Supported the migration of legacy components from max.gov to PrepToolkit. These components are: " +
+        "Threat and Hazard Identification and Risk Assessment (THIRA), Comprehensive Preparedness Guide (CPG), " +
+        "National Incident Management System (NIMS), and Urban Area Working Group (UAWG)",
         "Participated in architecture discussions, code reviews, and estimation for both GWT-based and serverless/Svelte modules.",
         "Supported containerized Java microservices built with Quarkus, deployed using Podman.",
-        "Maintained high code quality using version control, CM tools, and test-driven practices."
+        "Maintained high code quality using version control, CM tools, and test-driven practices.",
+        "Mentored junior developers, providing guidance on code quality, troubleshooting, and best practices across both legacy " +
+        "and modern stacks, as well as assisting with their understanding of architectural patterns across project modules."
       ],
-      techStack: "Java, Spring Boot, Quarkus, Google Web Toolkit (GWT), MySQL, Liferay 7, Apache HTTP Server, JavaScript/TypeScript, Svelte, AWS Lambda"
+      techStack: "Java, Spring Boot, Quarkus, Google Web Toolkit (GWT), MySQL, Liferay 7, Apache HTTP Server, JavaScript/TypeScript, Svelte, AWS Lambda, Git"
     },
     {
       jobTitle: "Applications Developer",
