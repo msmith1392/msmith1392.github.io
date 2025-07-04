@@ -29,7 +29,7 @@ const About: React.FC = () => {
           and <strong>Drupal</strong>, performance testing, and agile CI/CD pipelines.
         </p>
         <p>
-          I'm open to new opportunities where I can help modernize platforms, build mission-driven software, or contribute to cloud-native architecture. I'm also open to oppurtunities that allow me to grow in mobile app development—whether through native technologies (iOS/Swift, Android/Kotlin) or cross-platform solutions such as React Native.
+          I enjoy modernizing platforms, building mission-driven software, and contributing to cloud-native architecture with the work that I do. I also enjoy expanding my skills in mobile app development—whether through native technologies (iOS/Swift, Android/Kotlin) or cross-platform solutions such as React Native.
         </p>
       </FadeInSection>
     </section>
