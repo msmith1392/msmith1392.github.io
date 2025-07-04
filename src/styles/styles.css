@@ -62,3 +62,52 @@ footer, footer.bg-primary, footer.bg-dark {
   background: #23272f !important;
   color: #bbb !important;
 }
+
+.work-experience-card {
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  margin-bottom: 2rem;
+  background: #fff;
+  text-align: left;
+}
+
+.work-experience-card .card-body {
+  padding: 2rem;
+}
+
+.work-experience-title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.work-experience-company {
+  color: #6c757d;
+  font-weight: 400;
+}
+
+.work-experience-location {
+  color: #868e96;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.work-experience-dates {
+  margin-bottom: 0.5rem;
+}
+
+.work-experience-list {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.work-experience-list li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+  font-size: 1.07rem;
+}
+
+.work-experience-tech {
+  margin-bottom: 0;
+  font-size: 1rem;
+}

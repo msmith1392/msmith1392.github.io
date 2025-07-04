@@ -15,7 +15,7 @@ const WorkExperience: React.FC = () => {
   const experiences: Experience[] = [
     {
       jobTitle: "Software Engineer",
-      company: "4 Arrows Consulting (FEMA Contract - PrepToolkit)",
+      company: "4 Arrows Consulting, Inc. (FEMA Contract - PrepToolkit)",
       location: "Remote / Somerset, KY",
       startDate: "March 2019",
       endDate: "Present",
@@ -59,11 +59,12 @@ const WorkExperience: React.FC = () => {
       startDate: "March 2016",
       endDate: "March 2017",
       description: [
-        "Developed web applications for clients including Presbyterian Church (USA) and University of Kentucky’s College of Public Health.",
-        "Built custom CMS tools, event registration systems, and online surveys using Python/Django and AngularJS.",
-        "Participated in full development lifecycle from planning to deployment."
+        "Managed multiple projects and client requests simultaneously, using GitHub Flow for deployment and version control.",
+        "Developed web applications for clients including Presbyterian Church (USA) and University of Kentucky's College of Public Health.",
+        "Built custom CMS tools, event registration systems, nomination management, and online surveys for Presbyterian Church (USA) using Python/Django and AngularJS.",
+        "Heavily involved in the full software development lifecycle of a project for University of Kentucky's College of Public Health, including a mobile web app (Fit Face-Off), an interactive wellness tool for team and individual fitness challenges.",
       ],
-      techStack: "Python, Django, JavaScript (AngularJS, jQuery), Bootstrap, AWS, GitHub, PHP, Drupal"
+      techStack: "Python, Django, JavaScript (AngularJS, jQuery), Bootstrap, SQL, Git, PHP, Drupal, WordPress, AWS"
     },
     {
       jobTitle: "Programming Analyst",
@@ -72,9 +73,11 @@ const WorkExperience: React.FC = () => {
       startDate: "March 2015",
       endDate: "March 2016",
       description: [
-        "Developed backend components for an EDI platform (EDITRACE) using Python.",
-        "Built translation/validation tools to process data in XML, JSON, IDOC, X12, CSV, and other formats.",
-        "Created a web console for real-time transaction analysis."
+        "Worked with teammates on KFG's Electronic Data Interchange (EDI) platform, EDITRACE.",
+        "Developed backend Python components for EDITRACE's translation, validation, and mapping engine, collaborating closely with the Business Analyst.",
+        "Built tools to process and validate data in a variety of formats, including XML, X12, EDIFACT, CSV, Excel, Tradacom, JSON, and IDoc, and assisted with managing data flow to and from databases.",
+        "Analyzed EDI processes in real-time production environments with other developers to identify and resolve transaction errors.",
+        "Implemented a web-based console for users to inspect and analyze any aspect of the EDI process in real time."
       ],
       techStack: "Python, EDI (X12, XML, EDIFACT, Tradacoms, JSON, IDOC), Bootstrap, Git"
     }
@@ -90,24 +93,30 @@ const WorkExperience: React.FC = () => {
   return (
     <section className="container text-center">
       <FadeInSection>
-        <h2>Work Experience</h2>
-        <ul className="list-unstyled text-left">
-          {experiences.map((exp: Experience, index: number) => (
-            <li key={index} className="mb-5">
-              <h3>{exp.jobTitle} — {exp.company}</h3>
-              <h5>{exp.location}</h5>
-              <p className="mb-1">
-                {exp.startDate} - {exp.endDate} ({calculateDuration(exp.startDate, exp.endDate)})
-              </p>
-              <ul>
-                {exp.description.map((point: string, i: number) => (
-                  <li key={i}>{point}</li>
-                ))}
-              </ul>
-              <p><strong>Tech Stack:</strong> {exp.techStack}</p>
-            </li>
-          ))}
-        </ul>
+        <h2 className="mb-4">Work Experience</h2>
+        <div className="row justify-content-center">
+          <div className="col-lg-10">
+            {experiences.map((exp: Experience, index: number) => (
+              <div key={index} className="work-experience-card">
+                <div className="card-body">
+                  <h4 className="work-experience-title">
+                    {exp.jobTitle} <span className="work-experience-company">— {exp.company}</span>
+                  </h4>
+                  <h6 className="work-experience-location">{exp.location}</h6>
+                  <p className="work-experience-dates">
+                    <strong>{exp.startDate} - {exp.endDate}</strong> <span className="text-muted">({calculateDuration(exp.startDate, exp.endDate)})</span>
+                  </p>
+                  <ul className="work-experience-list">
+                    {exp.description.map((point: string, i: number) => (
+                      <li key={i}>{point}</li>
+                    ))}
+                  </ul>
+                  <p className="work-experience-tech"><strong>Tech Stack:</strong> {exp.techStack}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </FadeInSection>
     </section>
   );
