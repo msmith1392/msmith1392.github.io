@@ -42,11 +42,15 @@ const WorkExperience: React.FC = () => {
       startDate: "March 2017",
       endDate: "March 2019",
       description: [
-        "Maintained and enhanced enterprise logistics systems across UPS ground operations.",
-        "Collaborated cross-functionally to implement and test new features from requirements through deployment.",
-        "Conducted system performance testing using Apache JMeter and HP Roadrunner."
+        "Maintained and enhanced enterprise logistics systems used across UPS ground operations.",
+        "Developed UI features for a real-time transportation visibility system.",
+        "Collaborated across teams to implement and test new features from requirements through deployment.",
+        "Translated requirements into discrete rules for the Drools inference engine to process.",
+        "Conducted system performance testing using Apache JMeter and HP Roadrunner.",
+        "Delivered features on a three-week agile sprint cycle.",
+        "Provided 24/7 production support (on rotation with the rest of the team members)."
       ],
-      techStack: "Java, Spring Framework, WebLogic, ActiveMQ, SQL Server, Git, TFVC"
+      techStack: "Java, Spring Framework, Drools (BRMS), WebLogic, ActiveMQ, SQL Server, TFVC"
     },
     {
       jobTitle: "Software Developer",
