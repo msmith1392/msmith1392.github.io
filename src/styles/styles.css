@@ -63,7 +63,7 @@ footer, footer.bg-primary, footer.bg-dark {
   color: #bbb !important;
 }
 
-.work-experience-card {
+.card {
   border-radius: 12px;
   border: 1px solid #e0e0e0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
@@ -72,8 +72,40 @@ footer, footer.bg-primary, footer.bg-dark {
   text-align: left;
 }
 
-.work-experience-card .card-body {
+.card .card-body {
   padding: 2rem;
+}
+
+.card .card-text-muted {
+  color: #868e96;
+  font-size: 0.95em;
+  margin-left: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.card-header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-title-no-margin {
+  margin-bottom: 0;
+}
+
+.card-toggle {
+  font-size: 0.95rem;
+  margin-left: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.card-bottom-toggle {
+  text-align: right;
+  margin-top: 1rem;
+  cursor: pointer;
+  user-select: none;
 }
 
 .work-experience-title {
@@ -82,17 +114,23 @@ footer, footer.bg-primary, footer.bg-dark {
 }
 
 .work-experience-company {
-  color: #6c757d;
+  color: #495057;
+  font-size: 1.05rem;
+  margin-top: 2px;
   font-weight: 400;
 }
 
 .work-experience-location {
   color: #868e96;
   font-size: 1rem;
+  margin-top: 4px;
   margin-bottom: 0.5rem;
 }
 
 .work-experience-dates {
+  color: #868e96;
+  font-size: 0.97rem;
+  margin-top: 2px;
   margin-bottom: 0.5rem;
 }
 

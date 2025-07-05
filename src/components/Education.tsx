@@ -1,12 +1,19 @@
 import React from "react";
+import Card from "./Card";
+import FadeInSection from "./FadeInSection";
 
 const Education: React.FC = () => (
   <section className="container text-center">
-    <h2>Education</h2>
-    <div>
-      <strong>Eastern Kentucky University</strong> - Richmond, KY<br />
-      <span>B.S. in Computer Science, 2015</span>
-    </div>
+    <FadeInSection>
+      <h2>Education</h2>
+      <Card>
+        <div>
+          <strong>Eastern Kentucky University</strong><br />
+          <span>Richmond, KY</span><br />
+          <span>B.S. in Computer Science, 2015</span>
+        </div>
+      </Card>
+    </FadeInSection>
   </section>
 );
 

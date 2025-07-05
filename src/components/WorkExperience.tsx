@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Card from './Card';
 import FadeInSection from './FadeInSection';
 
 const months: string[] = [
@@ -19,7 +20,7 @@ type Experience = {
 const experiences: Experience[] = [
   {
     jobTitle: "Software Engineer",
-    company: "4 Arrows Consulting, Inc. (FEMA Contract - PrepToolkit)",
+    company: "4 Arrows Consulting, Inc.",
     location: "Remote / Somerset, KY",
     startDate: "March 2019",
     endDate: "Present",
@@ -128,58 +129,37 @@ const WorkExperience: React.FC = () => {
         <div className="row justify-content-center">
           <div className="col-lg-10">
             {experiences.map((exp: Experience, index: number) => (
-              <div
+              <Card
                 key={index}
-                className="work-experience-card"
-                style={{ cursor: 'pointer' }}
-                onClick={(): void => handleToggle(index)}
-              >
-                <div className="card-body">
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <div>
-                      <h4 className="work-experience-title" style={{ marginBottom: 0 }}>
-                        {exp.jobTitle} <span className="work-experience-company">— {exp.company}</span>
-                      </h4>
-                      <div
-                        className="work-experience-location"
-                        style={{ fontSize: '1rem', color: '#868e96', marginTop: 8 }}
-                      >
-                        {exp.location}
-                      </div>
-                      <div
-                        className="work-experience-dates"
-                        style={{ fontSize: '0.97rem', color: '#868e96', marginTop: 8 }}
-                      >
-                        {exp.startDate} - {exp.endDate}
-                        <span className="text-muted" style={{ fontSize: '0.95em', marginLeft: 6 }}>
-                          ({calculateDuration(exp.startDate, exp.endDate)})
-                        </span>
-                      </div>
+                expandable
+                expanded={expanded === index}
+                onToggle={() => handleToggle(index)}
+                className="mb-3"
+                showBottomToggle
+                title={
+                  <div>
+                    <div>{exp.jobTitle}</div>
+                    <div className="work-experience-company">{exp.company}</div>
+                    <div className="work-experience-location">{exp.location}</div>
+                    <div className="work-experience-dates">
+                      {exp.startDate} - {exp.endDate} {' '} ({calculateDuration(exp.startDate, exp.endDate)})
                     </div>
-                    <span className="text-muted" style={{ fontSize: '0.95rem', marginLeft: 12 }}>
-                      {expanded === index ? (
-                        <>
-                          Close <span aria-hidden>▲</span>
-                        </>
-                      ) : (
-                        <>
-                          Expand <span aria-hidden>▼</span>
-                        </>
-                      )}
-                    </span>
                   </div>
-                  {expanded === index && (
-                    <>
-                      <ul className="work-experience-list">
-                        {exp.description.map((point: string, i: number) => (
-                          <li key={i}>{point}</li>
-                        ))}
-                      </ul>
-                      <p className="work-experience-tech"><strong>Tech Stack:</strong> {exp.techStack}</p>
-                    </>
-                  )}
-                </div>
-              </div>
+                }
+              >
+                {expanded === index && (
+                  <>
+                    <ul className="work-experience-list">
+                      {exp.description.map((point: string, i: number) => (
+                        <li key={i}>{point}</li>
+                      ))}
+                    </ul>
+                    <p className="work-experience-tech">
+                      <strong>Tech Stack:</strong> {exp.techStack}
+                    </p>
+                  </>
+                )}
+              </Card>
             ))}
           </div>
         </div>
