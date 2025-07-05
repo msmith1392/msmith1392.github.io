@@ -18,7 +18,7 @@ const Skills: React.FC = () => (
             <strong>CMS &amp; Platforms:</strong> Liferay, Drupal, AWS (Lambda, S3), Apache HTTP Server, MySQL, Postgres, SQL Server
           </li>
           <li>
-            <strong>Dev Tools:</strong> Git, GitHub Flow, Maven, JMeter, ActiveMQ, WebLogic, Docker, Podman, Kubernetes
+            <strong>Dev Tools:</strong> Git, GitHub Flow, Maven, Gradel, npm, Node.js, JMeter, ActiveMQ, WebLogic, Docker, Podman, Kubernetes
           </li>
           <li>
             <strong>Other:</strong> Remote Collaboration, Agile/Scrum, CI/CD Pipelines, Legacy System Modernization

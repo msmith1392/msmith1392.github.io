@@ -33,7 +33,7 @@ const experiences: Experience[] = [
       "Maintained high code quality using version control, CM tools, and test-driven practices.",
       "Mentored junior developers, providing guidance on code quality, troubleshooting, and best practices across both legacy and modern stacks, as well as assisting with their understanding of architectural patterns across project modules."
     ],
-    techStack: "Java, Spring Boot, Quarkus, Google Web Toolkit (GWT), MySQL, Liferay 7, Apache HTTP Server, JavaScript/TypeScript, Svelte, AWS Lambda, Git"
+    techStack: "Java, Spring Boot, Gradle, Quarkus, Google Web Toolkit (GWT), MySQL, Liferay 7, Apache HTTP Server, JavaScript/TypeScript, Svelte, Node.js, npm, AWS Lambda, Git"
   },
   {
     jobTitle: "Applications Developer",
@@ -50,7 +50,7 @@ const experiences: Experience[] = [
       "Delivered features on a three-week agile sprint cycle.",
       "Provided 24/7 production support (on rotation with the rest of the team members)."
     ],
-    techStack: "Java, Spring Framework, Drools (BRMS), WebLogic, ActiveMQ, SQL Server, TFVC"
+    techStack: "Java, Spring Framework, Maven, Gradle, Drools (BRMS), WebLogic, ActiveMQ, SQL Server, TFVC"
   },
   {
     jobTitle: "Software Developer",
