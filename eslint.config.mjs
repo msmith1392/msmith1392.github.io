@@ -5,6 +5,7 @@ import pluginReact from "eslint-plugin-react";
 import json from "@eslint/json";
 import markdown from "@eslint/markdown";
 import css from "@eslint/css";
+import noInlineStyles from "eslint-plugin-no-inline-styles";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([
@@ -21,10 +22,12 @@ export default defineConfig([
   },
   {
     files: ["**/*.{js,jsx,ts,tsx}"],
+    plugins: { "no-inline-styles": noInlineStyles },
     rules: {
       "curly": ["error", "all"],
       "react/no-unescaped-entities": "off",
-      "react/react-in-jsx-scope": "off"
+      "react/react-in-jsx-scope": "off",
+      "no-inline-styles/no-inline-styles": "warn"
     }
   },
   { files: ["**/*.json"], plugins: { json }, language: "json/json", extends: ["json/recommended"] },

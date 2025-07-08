@@ -66,6 +66,10 @@ Visit [http://localhost:5173](http://localhost:5173) in your browser.
 - Run `npx prettier --check .` to check formatting.
 - Run `npx eslint . --fix` to automatically fix lint errors.
 - Run `npx prettier --write .` to auto-format code.
+- **Note:** Inline styles in React components are disallowed and will be flagged by ESLint (`eslint-plugin-no-inline-styles`). Move styles to a CSS class instead of using the `style` prop in JSX.
+
+**Troubleshooting:**  
+If you see "Inline styles are not allowedeslint(no-inline-styles/no-inline-styles)", move your styles to a CSS class instead of using the `style` prop in JSX.
 
 ### Building for Production
 
@@ -112,6 +116,17 @@ VITE_EMAILJS_SERVICE_ID=your_service_id
 VITE_EMAILJS_TEMPLATE_ID=your_template_id
 VITE_EMAILJS_USER_ID=your_user_id
 ```
+
+## VS Code Workspace Settings
+
+This repo includes a `.vscode/settings.json` file to ensure consistent linting and formatting in VS Code.  
+If you use VS Code, these settings will automatically enable ESLint and Prettier on save.
+
+**Recommended VS Code Extensions:**
+
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [TypeScript Explorer](https://marketplace.visualstudio.com/items?itemName=mxsdev.typescript-explorer)
 
 ## License
 

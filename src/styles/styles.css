@@ -160,3 +160,11 @@ footer, footer.bg-primary, footer.bg-dark {
   margin-bottom: 0;
   font-size: 1rem;
 }
+
+.contact-card-max-width {
+  max-width: 700px;
+}
+
+.d-none {
+  display: none !important;
+}
