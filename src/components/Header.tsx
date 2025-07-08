@@ -20,7 +20,7 @@ const Header: React.FC = () => (
         Contact
       </NavLink>
       <a
-        href={process.env.PUBLIC_URL + "/resume.pdf"}
+        href="/resume.pdf"
         className="nav-link"
         target="_blank"
         rel="noopener noreferrer"
