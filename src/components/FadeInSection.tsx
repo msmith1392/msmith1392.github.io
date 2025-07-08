@@ -21,7 +21,7 @@ const FadeInSection: React.FC<FadeInSectionProps> = ({ children }) => {
       observer.observe(currentRef);
     }
 
-    return () => {
+    return (): void => {
       if (currentRef) {
         observer.unobserve(currentRef);
       }

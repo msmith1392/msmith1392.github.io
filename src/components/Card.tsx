@@ -34,7 +34,9 @@ const Card: React.FC<CardProps> = ({
               onKeyDown={e => {
                 if (e.key === 'Enter' || e.key === ' ') {
                   e.preventDefault();
-                  onToggle && onToggle();
+                  if (onToggle) {
+                    onToggle();
+                  }
                 }
               }}
             >
@@ -65,7 +67,9 @@ const Card: React.FC<CardProps> = ({
               onKeyDown={e => {
                 if (e.key === 'Enter' || e.key === ' ') {
                   e.preventDefault();
-                  onToggle && onToggle();
+                  if (onToggle) {
+                    onToggle();
+                  }
                 }
               }}
             >

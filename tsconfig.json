@@ -10,7 +10,9 @@
     "forceConsistentCasingInFileNames": true,
     "allowJs": false,
     "noEmit": true,
+    "noImplicitAny": true,
     "noImplicitReturns": true,
+    "strictFunctionTypes": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true

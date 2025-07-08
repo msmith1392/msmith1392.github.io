@@ -1,66 +1,63 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
+import emailjs from 'emailjs-com';
 import Card from './Card';
 import FadeInSection from './FadeInSection';
 
-const Contact: React.FC = () => {
-  // useState to manage the form visibility state
-  const [isFormOpen, setIsFormOpen] = useState<boolean>(false);
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
+const USER_ID = import.meta.env.VITE_EMAILJS_USER_ID as string;
 
-  // Function to toggle the form visibility
-  const toggleForm = (): void => setIsFormOpen(!isFormOpen);
-  
+const Contact: React.FC = () => {
+  const form = useRef<HTMLFormElement>(null);
+  const [sent, setSent] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+    if (!form.current) {
+      return;
+    }
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, USER_ID)
+      .then(() => {
+        setSent(true);
+        setError(null);
+        form.current?.reset();
+      }, () => {
+        setError("Failed to send message. Please try again later. You can also contact me directly using the email icon in the footer below.");
+      });
+  };
+
   return (
     <section className="container text-center">
       <FadeInSection>
-        <h2>Contact Information</h2>
-        <Card>
-          <ul className="list-unstyled">
-            <li>Email: <a href="mailto:msmith1392@gmail.com">msmith1392@gmail.com</a></li>
-            <li>GitHub: <a href="https://github.com/msmith1392" target="_blank" rel="noopener noreferrer">View My GitHub Profile</a></li>
-            <li>LinkedIn: <a href="https://www.linkedin.com/in/matthew-smith-22310b111/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a></li>
-            <li>Resume: <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Download PDF</a></li>
-          </ul>
-
-          {/* Button to toggle the form visibility */}
-          <button 
-            className="btn btn-primary mt-2 mb-4" 
-            onClick={toggleForm} 
-            aria-expanded={isFormOpen}
-          >
-            {isFormOpen ? 'Hide Contact Form' : 'Show Contact Form'}
-          </button>
-
-          {/* Collapsible form panel */}
-          {isFormOpen && (
-            <div className="mt-4 mb-5">
-              <h4>Contact Me</h4>
-              <form>
+        <h2 className="mb-4 text-center">Contact Me</h2>
+        <div className="row justify-content-center">
+          <div className="col-12 mx-auto" style={{ maxWidth: "700px" }}>
+            <Card>
+              <h5 className="card-title mb-4 text-center">Send a Message</h5>
+              {sent && <div className="alert alert-success">Message sent! Thank you.</div>}
+              {error && <div className="alert alert-danger">{error}</div>}
+              <form ref={form} onSubmit={sendEmail}>
                 <div className="mb-3">
-                  <label htmlFor="name" className="form-label">Name</label>
-                  <input type="text" className="form-control" id="name" required />
+                  <label htmlFor="name" className="form-label text-start w-100">Your Name</label>
+                  <input type="text" className="form-control" id="name" name="name" required />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="email" className="form-label">Email</label>
-                  <input type="email" className="form-control" id="email" required />
+                  <label htmlFor="email" className="form-label text-start w-100">Your Email</label>
+                  <input type="email" className="form-control" id="email" name="email" required />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="message" className="form-label">Message</label>
-                  <textarea className="form-control" id="message" rows={4} required></textarea>
+                  <label htmlFor="message" className="form-label text-start w-100">Your Message</label>
+                  <textarea className="form-control" id="message" name="message" rows={4} required></textarea>
                 </div>
-
-                {/* Disabled Submit Button */}
-                <button type="submit" className="btn btn-success" disabled>
-                  Submit (Not Functional Yet)
+                <input type="hidden" name="time" value={new Date().toLocaleString()} />
+                <button type="submit" className="btn btn-success w-100">
+                  Submit
                 </button>
               </form>
-
-              {/* Informational message */}
-              <div className="mt-3 alert alert-info">
-                <strong>Note:</strong> The contact form is currently not functional. Please check back later.
-              </div>
-            </div>
-          )}
-        </Card>
+            </Card>
+          </div>
+        </div>
       </FadeInSection>
     </section>
   );
