@@ -1,7 +1,9 @@
+/* eslint-disable no-inline-styles/no-inline-styles */
 import { motion } from "framer-motion";
 import React from "react";
+import type { Variants } from "framer-motion";
 
-const variants = {
+const variants: Variants = {
   initial: { opacity: 0, y: 24 },
   animate: { opacity: 1, y: 0 },
   exit: { opacity: 0, y: -24 },

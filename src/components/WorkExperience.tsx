@@ -83,7 +83,7 @@ const experiences: Experience[] = [
   }
 ];
 
-const calculateDuration = (start: string, end: string): string => {
+const calculateDuration: (start: string, end: string) => string = (start: string, end: string): string => {
   const [startMonthStr, startYearStr]: [string, string] = start.split(" ") as [string, string];
   const [endMonthStr, endYearStr]: [string, string] =
     end === "Present"
@@ -118,7 +118,7 @@ const calculateDuration = (start: string, end: string): string => {
 const WorkExperience: React.FC = () => {
   const [expanded, setExpanded] = useState<number | null>(null);
 
-  const handleToggle = (index: number): void => {
+  const handleToggle: (index: number) => void = (index: number): void => {
     setExpanded(expanded === index ? null : index);
   };
 
@@ -138,10 +138,10 @@ const WorkExperience: React.FC = () => {
                 showBottomToggle
                 title={
                   <div>
-                    <div>{exp.jobTitle}</div>
-                    <div className="work-experience-company">{exp.company}</div>
-                    <div className="work-experience-location">{exp.location}</div>
-                    <div className="work-experience-dates">
+                    <div className="card-entry-title">{exp.jobTitle}</div>
+                    <div className="card-entry-organization">{exp.company}</div>
+                    <div className="card-entry-location">{exp.location}</div>
+                    <div className="card-entry-dates">
                       {exp.startDate} - {exp.endDate} {' '} ({calculateDuration(exp.startDate, exp.endDate)})
                     </div>
                   </div>

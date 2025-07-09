@@ -4,8 +4,8 @@ import FadeInSection from './FadeInSection';
 import useYearsOfExperience from '../hooks/useYearsOfExperience';
 
 const About: React.FC = () => {
-  const yearsOfExperienceTotal = useYearsOfExperience('2015-03-01');
-  const yearsOfExperienceAtPresentCompany = useYearsOfExperience('2019-03-11');
+  const yearsOfExperienceTotal: number = useYearsOfExperience('2015-03-01');
+  const yearsOfExperienceAtPresentCompany: number = useYearsOfExperience('2019-03-11');
 
   return (
     <section className="container text-center">
@@ -14,7 +14,7 @@ const About: React.FC = () => {
         <Card>
           <p>
             I'm a Software Developer with {yearsOfExperienceTotal}+ years building secure, scalable, and maintainable
-            applications across federal and private sectors. My expertise centers on Java ecosystems-
+            applications across federal and private sectors. My expertise centers on <strong>Java</strong> ecosystems-
             <strong>Spring Boot</strong>, <strong>GWT</strong>, and <strong>Quarkus</strong>-complemented by{' '}
             <strong>Python/Django</strong> and modern frontend frameworks like{' '}
             <strong>Svelte</strong>, <strong>React</strong>, and <strong>Angular</strong>.

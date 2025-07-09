@@ -16,8 +16,29 @@ export default defineConfig([
   {
     files: ["**/*.{ts,tsx}"],
     rules: {
-      "@typescript-eslint/explicit-function-return-type": "warn",
-      "@typescript-eslint/explicit-module-boundary-types": "warn"
+      "@typescript-eslint/explicit-function-return-type": ["warn", { allowExpressions: false }],
+      "@typescript-eslint/explicit-module-boundary-types": "warn",
+      "@typescript-eslint/typedef": [
+        "warn",
+        {
+          "variableDeclaration": true,
+          "arrayDestructuring": false,
+          "objectDestructuring": false,
+          "parameter": false,
+          "propertyDeclaration": false,
+          "memberVariableDeclaration": false
+        }
+      ],
+      "@typescript-eslint/naming-convention": [
+        "warn",
+        { "selector": "variableLike", "format": ["camelCase", "PascalCase"] },
+        {
+          "selector": "variable",
+          "modifiers": ["const"],
+          "format": ["camelCase", "PascalCase", "UPPER_CASE"]
+        },
+        { "selector": "typeLike", "format": ["PascalCase"] }
+      ]
     }
   },
   {
@@ -27,7 +48,8 @@ export default defineConfig([
       "curly": ["error", "all"],
       "react/no-unescaped-entities": "off",
       "react/react-in-jsx-scope": "off",
-      "no-inline-styles/no-inline-styles": "warn"
+      "no-inline-styles/no-inline-styles": "warn",
+      "react/jsx-pascal-case": "error"
     }
   },
   { files: ["**/*.json"], plugins: { json }, language: "json/json", extends: ["json/recommended"] },

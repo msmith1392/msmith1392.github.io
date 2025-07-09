@@ -3,11 +3,12 @@ import emailjs from 'emailjs-com';
 import Card from './Card';
 import FadeInSection from './FadeInSection';
 
-const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
-const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
-const USER_ID = import.meta.env.VITE_EMAILJS_USER_ID as string;
+const SERVICE_ID: string = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
+const TEMPLATE_ID: string = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
+const USER_ID: string = import.meta.env.VITE_EMAILJS_USER_ID as string;
 
 const Contact: React.FC = () => {
+  // eslint-disable-next-line @typescript-eslint/typedef
   const formRef = useRef<HTMLFormElement>(null);
   const [isSending, setIsSending] = useState(false);
   const [feedback, setFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
@@ -16,10 +17,10 @@ const Contact: React.FC = () => {
     if (!formRef.current) {
       return false;
     }
-    const nameInput = formRef.current.elements.namedItem('name');
-    const emailInput = formRef.current.elements.namedItem('email');
-    const messageInput = formRef.current.elements.namedItem('message');
-    const websiteInput = formRef.current.elements.namedItem('website');
+    const nameInput: Element | RadioNodeList | null = formRef.current.elements.namedItem('name');
+    const emailInput: Element | RadioNodeList | null = formRef.current.elements.namedItem('email');
+    const messageInput: Element | RadioNodeList | null = formRef.current.elements.namedItem('message');
+    const websiteInput: Element | RadioNodeList | null = formRef.current.elements.namedItem('website');
 
     // Honeypot anti-spam: should be empty, if not then bot detected
     if (
@@ -31,11 +32,11 @@ const Contact: React.FC = () => {
       return false;
     }
 
-    const nameValue =
+    const nameValue: string =
       nameInput instanceof HTMLInputElement ? nameInput.value.trim() : '';
-    const emailValue =
+    const emailValue: string =
       emailInput instanceof HTMLInputElement ? emailInput.value.trim() : '';
-    const messageValue =
+    const messageValue: string =
       messageInput instanceof HTMLTextAreaElement ? messageInput.value.trim() : '';
 
     if (!/^[a-zA-Z\s'-]{2,}$/.test(nameValue)) {
@@ -54,7 +55,7 @@ const Contact: React.FC = () => {
     return true;
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     if (!formRef.current) {
       return;

@@ -1,29 +1,58 @@
 import React from "react";
 import Card from "./Card";
 import FadeInSection from "./FadeInSection";
+import AccordionSection from "./AccordionSection";
+
+type SkillSection = {
+  header: string;
+  body: string;
+  id: string;
+};
+
+const skillSections: SkillSection[] = [
+  {
+    header: "Languages",
+    body: "Java, Python, JavaScript/TypeScript, SQL, Swift, Kotlin, PHP, C#, HTML, CSS",
+    id: "Languages",
+  },
+  {
+    header: "Frameworks",
+    body: "Spring Boot, Quarkus, Django, GWT, React, Svelte, Angular, .NET, Bootstrap, Tailwind",
+    id: "Frameworks",
+  },
+  {
+    header: "CMS & Platforms",
+    body: "Liferay, Drupal, AWS (Lambda, S3), Apache HTTP Server, MySQL, Postgres, SQL Server",
+    id: "CMSPlatforms",
+  },
+  {
+    header: "Dev Tools",
+    body: "Git, GitHub Flow, Maven, Gradel, npm, Node.js, JMeter, ActiveMQ, WebLogic, Docker, Podman, Kubernetes",
+    id: "DevTools",
+  },
+  {
+    header: "Other",
+    body: "Remote Collaboration, Agile/Scrum, CI/CD Pipelines, Legacy System Modernization",
+    id: "Other",
+  },
+];
 
 const Skills: React.FC = () => (
   <section className="container text-center">
     <FadeInSection>
       <h2 className="mb-4">Technical Skills</h2>
       <Card>
-        <ul className="list-unstyled text-left mx-auto" style={{ maxWidth: 600 }}>
-          <li>
-            <strong>Languages:</strong> Java, Python, JavaScript/TypeScript, SQL, Swift, Kotlin, PHP, C#, HTML, CSS
-          </li>
-          <li>
-            <strong>Frameworks:</strong> Spring Boot, Quarkus, Django, GWT, React, Svelte, Angular, .NET, Bootstrap, Tailwind
-          </li>
-          <li>
-            <strong>CMS &amp; Platforms:</strong> Liferay, Drupal, AWS (Lambda, S3), Apache HTTP Server, MySQL, Postgres, SQL Server
-          </li>
-          <li>
-            <strong>Dev Tools:</strong> Git, GitHub Flow, Maven, Gradel, npm, Node.js, JMeter, ActiveMQ, WebLogic, Docker, Podman, Kubernetes
-          </li>
-          <li>
-            <strong>Other:</strong> Remote Collaboration, Agile/Scrum, CI/CD Pipelines, Legacy System Modernization
-          </li>
-        </ul>
+        <div className="accordion mx-auto skills-accordion-max-width" id="skillsAccordion">
+          {skillSections.map((section: SkillSection) => (
+            <AccordionSection
+              key={section.id}
+              header={section.header}
+              body={section.body}
+              id={section.id}
+              parentId="skillsAccordion"
+            />
+          ))}
+        </div>
       </Card>
     </FadeInSection>
   </section>

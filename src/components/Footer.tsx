@@ -1,3 +1,4 @@
+/* eslint-disable no-inline-styles/no-inline-styles */
 import React from 'react';
 
 const Footer: React.FC = () => (
