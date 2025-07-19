@@ -25,13 +25,12 @@ const experiences: Experience[] = [
     startDate: "March 2019",
     endDate: "Present",
     description: [
-      "Contributed to multiple modules of FEMA's PrepToolkit, including the Unified Reporting Tool (URT), Radiological Emergency Preparedness Program (REPP) Exercises, and supporting local, regional, federal, and private sector partners with Homeland Security Exercise and Evaluation Program (HSEEP) Exercises.",
+      "Delivered features across multiple FEMA PrepToolkit modules, including Unified Reporting Tool (URT), Radiological Emergency Preparedness Program (REPP) Exercises, and Homeland Security Exercise and Evaluation Program (HSEEP) tools used by local, regional, federal, and private partners.",
       "Led enhancements and updates to URT assessment systems for each fiscal year cycle.",
-      "Supported the migration of legacy components from max.gov to PrepToolkit. These components are: Threat and Hazard Identification and Risk Assessment (THIRA), Comprehensive Preparedness Guide (CPG), National Incident Management System (NIMS), and Urban Area Working Group (UAWG)",
-      "Participated in architecture discussions, code reviews, and estimation for both GWT-based and serverless/Svelte modules.",
+      "Modernized legacy apps during the transition from max.gov to PrepToolkit, including Threat and Hazard Identification and Risk Assessment (THIRA), Comprehensive Preparedness Guide (CPG), National Incident Management System (NIMS), and Urban Area Working Group (UAWG).",
+      "Collaborated on architectural decisions and led code reviews across both legacy GWT modules and modern Svelte-based services, ensuring technical consistency and maintainability across the stack.",
       "Supported containerized Java microservices built with Quarkus, deployed using Podman.",
-      "Maintained high code quality using version control, CM tools, and test-driven practices.",
-      "Mentored junior developers, providing guidance on code quality, troubleshooting, and best practices across both legacy and modern stacks, as well as assisting with their understanding of architectural patterns across project modules."
+      "Provided mentorship to junior developers by demonstrating established code quality standards, reviewing PRs, and supporting architectural understanding across legacy and modern codebases."
     ],
     techStack: "Java, Spring Boot, Gradle, Quarkus, Google Web Toolkit (GWT), MySQL, Liferay 7, Apache HTTP Server, JavaScript/TypeScript, Svelte, Node.js, npm, AWS Lambda, Git"
   },
@@ -43,14 +42,14 @@ const experiences: Experience[] = [
     endDate: "March 2019",
     description: [
       "Maintained and enhanced enterprise logistics systems used across UPS ground operations.",
-      "Developed UI features for a real-time transportation visibility system.",
+      "Developed UI features and backend logic for a real-time transportation visibility and logistics system.",
       "Collaborated across teams to implement and test new features from requirements through deployment.",
       "Translated requirements into discrete rules for the Drools inference engine to process.",
-      "Conducted system performance testing using Apache JMeter and HP Roadrunner.",
+      "Conducted performance tuning initiatives using JMeter and Roadrunner to optimize logistics workflows. Identified and resolved bottlenecks in real-time transportation tracking systems.",
       "Delivered features on a three-week agile sprint cycle.",
       "Provided 24/7 production support (on rotation with the rest of the team members)."
     ],
-    techStack: "Java, Spring Framework, Maven, Gradle, Drools (BRMS), WebLogic, ActiveMQ, SQL Server, TFVC"
+    techStack: "Java, Spring Framework, Maven/Gradle, Drools (BRMS), WebLogic, ActiveMQ, SQL Server, TFVC"
   },
   {
     jobTitle: "Software Developer",
@@ -62,9 +61,9 @@ const experiences: Experience[] = [
       "Managed multiple projects and client requests simultaneously, using GitHub Flow for deployment and version control.",
       "Developed web applications for clients including Presbyterian Church (USA) and University of Kentucky's College of Public Health.",
       "Built custom CMS tools, event registration systems, nomination management, and online surveys for Presbyterian Church (USA) using Python/Django and AngularJS.",
-      "Heavily involved in the full software development lifecycle of a project for University of Kentucky's College of Public Health, including a mobile web app (Fit Face-Off), an interactive wellness tool for team and individual fitness challenges.",
+      "Heavily involved in the full software development lifecycle of a project for University of Kentucky's College of Public Health, including a mobile web app (Fit Face-Off), and interactive wellness tool for team and individual fitness challenges."
     ],
-    techStack: "Python, Django, JavaScript (AngularJS, jQuery), Bootstrap, SQL, Git, PHP, Drupal, WordPress, AWS"
+    techStack: "Python, Django, JavaScript (AngularJS, jQuery), Bootstrap, SQL, AWS, Git, PHP, Drupal, WordPress"
   },
   {
     jobTitle: "Programming Analyst",
@@ -73,8 +72,7 @@ const experiences: Experience[] = [
     startDate: "March 2015",
     endDate: "March 2016",
     description: [
-      "Worked with teammates on KFG's Electronic Data Interchange (EDI) platform, EDITRACE.",
-      "Developed backend Python components for EDITRACE's translation, validation, and mapping engine, collaborating closely with the Business Analyst.",
+      "Contributed to KFG's Electronic Data Interchange (EDI) platform, EDITRACE, by developing backend Python components for its translation, validation, and mapping engine in close collaboration with the Business Analyst and broader development team.",
       "Built tools to process and validate data in a variety of formats, including XML, X12, EDIFACT, CSV, Excel, Tradacom, JSON, and IDoc, and assisted with managing data flow to and from databases.",
       "Analyzed EDI processes in real-time production environments with other developers to identify and resolve transaction errors.",
       "Implemented a web-based console for users to inspect and analyze any aspect of the EDI process in real time."

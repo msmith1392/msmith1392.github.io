@@ -26,7 +26,7 @@ const skillSections: SkillSection[] = [
     id: "CMSPlatforms",
   },
   {
-    header: "Dev Tools",
+    header: "DevOps & Tools",
     body: "Git, GitHub Flow, Maven, Gradel, npm, Node.js, JMeter, ActiveMQ, WebLogic, Docker, Podman, Kubernetes",
     id: "DevTools",
   },

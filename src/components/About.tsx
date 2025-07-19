@@ -13,25 +13,19 @@ const About: React.FC = () => {
         <h2>About Me</h2>
         <Card>
           <p>
-            I'm a Software Developer with {yearsOfExperienceTotal}+ years building secure, scalable, and maintainable
-            applications across federal and private sectors. My expertise centers on <strong>Java</strong> ecosystems-
-            <strong>Spring Boot</strong>, <strong>GWT</strong>, and <strong>Quarkus</strong>-complemented by{' '}
-            <strong>Python/Django</strong> and modern frontend frameworks like{' '}
-            <strong>Svelte</strong>, <strong>React</strong>, and <strong>Angular</strong>.
+            I'm a Senior Software Developer with {yearsOfExperienceTotal}+ years of hands-on experience designing, building, and delivering secure, scalable solutions for federal, enterprise, and nonprofit clients.
           </p>
           <p>
-            For over {yearsOfExperienceAtPresentCompany} years, I've worked remotely supporting FEMA's <strong>PrepToolkit</strong> at <strong>4 Arrows Consulting, Inc.</strong>.
-            I contribute to key apps like the Unified Reporting Tool (URT), Radiological Emergency Preparedness Program (REPP) Exercises, and Homeland Security Exercise and Evaluation Program (HSEEP) modules—critical tools for planning, conducting, and evaluating emergency exercises at the local, state, and national level, as well as in the private sector.
-            My work helps ensure jurisdictions meet FEMA requirements and remain eligible for federal disaster relief funding.
-            I've contributed to modernizing legacy systems and developing scalable, cloud-native backends.
+            At <strong>4 Arrows Consulting, Inc.</strong>, I have spent {yearsOfExperienceAtPresentCompany}+ years as a developer and remote contributor for FEMA's <strong>PrepToolkit</strong> platform. I play a key role in architecture and modernization efforts for mission-critical applications, including the Unified Reporting Tool (URT) and Radiological Emergency Preparedness Program (REPP) modules, helping jurisdictions nationwide meet compliance and disaster relief requirements.
           </p>
           <p>
-            Prior to joining 4 Arrows, I worked on enterprise logistics systems at <strong>UPS</strong> and full-stack web apps for nonprofit and
-            public health clients with <strong>Apax Software</strong>. I'm experienced with CMS platforms like <strong>Liferay</strong>{' '}
-            and <strong>Drupal</strong>, performance testing, and agile CI/CD pipelines.
+            My background includes enterprise logistics systems at <strong>UPS</strong>, full-stack web and cloud-native development for public health and nonprofit clients at <strong>Apax Software</strong>, and deep experience with CMS platforms like <strong>Liferay</strong> and <strong>Drupal</strong>. I am skilled in performance testing, CI/CD automation, and mentoring teams in agile environments.
           </p>
           <p>
-            I enjoy modernizing platforms, building mission-driven software, and contributing to cloud-native architecture with the work that I do. I also enjoy expanding my skills in mobile app development—whether through native technologies (iOS/Swift, Android/Kotlin) or cross-platform solutions such as React Native.
+            My technical strengths span <strong>Java</strong> (Spring Boot, Quarkus, GWT), <strong>Python/Django</strong>, and modern front-end frameworks (<strong>React</strong>, <strong>Svelte</strong>, <strong>Angular</strong>). I am passionate about cloud architecture, legacy modernization, and mobile app development (iOS/Swift, Android/Kotlin, React Native).
+          </p>
+          <p>
+            I thrive in leadership roles, enjoy mentoring developers, and am committed to delivering high-impact, maintainable solutions that drive organizational success.
           </p>
         </Card>
       </FadeInSection>
