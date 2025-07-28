@@ -12,12 +12,12 @@ type SkillSection = {
 const skillSections: SkillSection[] = [
   {
     header: "Languages",
-    body: "Java, Python, JavaScript/TypeScript, SQL, Swift, Kotlin, PHP, C#, HTML, CSS",
+    body: "Java, Python, JavaScript/TypeScript, SQL, Go, Swift, Kotlin, PHP, C#, HTML, CSS",
     id: "Languages",
   },
   {
     header: "Frameworks",
-    body: "Spring Boot, Quarkus, Django, GWT, React, Svelte, Angular, .NET, Bootstrap, Tailwind",
+    body: "Spring Boot, Quarkus, Django, GWT, Gin, React, Svelte, Angular, .NET, Bootstrap, Tailwind",
     id: "Frameworks",
   },
   {
@@ -27,12 +27,12 @@ const skillSections: SkillSection[] = [
   },
   {
     header: "DevOps & Tools",
-    body: "Git, GitHub Flow, Maven, Gradel, npm, Node.js, JMeter, ActiveMQ, WebLogic, Docker, Podman, Kubernetes",
+    body: "Git, GitHub Flow, Maven, Gradle, npm, Node.js, go modules, JMeter, ActiveMQ, WebLogic, Docker, Podman, Kubernetes",
     id: "DevTools",
   },
   {
     header: "Other",
-    body: "Remote Collaboration, Agile/Scrum, CI/CD Pipelines, Legacy System Modernization",
+    body: "Remote Collaboration, Agile/Scrum, CI/CD Pipelines, gRPC, net/http, Legacy System Modernization",
     id: "Other",
   },
 ];

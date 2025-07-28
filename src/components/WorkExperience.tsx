@@ -26,10 +26,10 @@ const experiences: Experience[] = [
     endDate: "Present",
     description: [
       "Delivered features across multiple FEMA PrepToolkit modules, including Unified Reporting Tool (URT), Radiological Emergency Preparedness Program (REPP) Exercises, and Homeland Security Exercise and Evaluation Program (HSEEP) tools used by local, regional, federal, and private partners.",
-      "Led enhancements and updates to URT assessment systems for each fiscal year cycle.",
+      "Led annual updates to URT assessment systems, aligning with fiscal year requirements.",
       "Modernized legacy apps during the transition from max.gov to PrepToolkit, including Threat and Hazard Identification and Risk Assessment (THIRA), Comprehensive Preparedness Guide (CPG), National Incident Management System (NIMS), and Urban Area Working Group (UAWG).",
       "Collaborated on architectural decisions and led code reviews across both legacy GWT modules and modern Svelte-based services, ensuring technical consistency and maintainability across the stack.",
-      "Supported containerized Java microservices built with Quarkus, deployed using Podman.",
+      "Supported containerized Java microservices built with Quarkus and deployed via Podman.",
       "Provided mentorship to junior developers by demonstrating established code quality standards, reviewing PRs, and supporting architectural understanding across legacy and modern codebases."
     ],
     techStack: "Java, Spring Boot, Gradle, Quarkus, Google Web Toolkit (GWT), MySQL, Liferay 7, Apache HTTP Server, JavaScript/TypeScript, Svelte, Node.js, npm, AWS Lambda, Git"
@@ -44,10 +44,10 @@ const experiences: Experience[] = [
       "Maintained and enhanced enterprise logistics systems used across UPS ground operations.",
       "Developed UI features and backend logic for a real-time transportation visibility and logistics system.",
       "Collaborated across teams to implement and test new features from requirements through deployment.",
-      "Translated requirements into discrete rules for the Drools inference engine to process.",
+      "Translated requirements into discrete rules for the Drools inference engine, streamlining complex logic processing.",
       "Conducted performance tuning initiatives using JMeter and Roadrunner to optimize logistics workflows. Identified and resolved bottlenecks in real-time transportation tracking systems.",
       "Delivered features on a three-week agile sprint cycle.",
-      "Provided 24/7 production support (on rotation with the rest of the team members)."
+      "Provided 24/7 production support, ensuring minimal downtime and rapid issue resolution, contributing to overall system reliability."
     ],
     techStack: "Java, Spring Framework, Maven/Gradle, Drools (BRMS), WebLogic, ActiveMQ, SQL Server, TFVC"
   },
@@ -58,9 +58,9 @@ const experiences: Experience[] = [
     startDate: "March 2016",
     endDate: "March 2017",
     description: [
-      "Managed multiple projects and client requests simultaneously, using GitHub Flow for deployment and version control.",
-      "Developed web applications for clients including Presbyterian Church (USA) and University of Kentucky's College of Public Health.",
-      "Built custom CMS tools, event registration systems, nomination management, and online surveys for Presbyterian Church (USA) using Python/Django and AngularJS.",
+      "Managed multiple client projects simultaneously using GitHub Flow for efficient deployment and version control.",
+      "Delivered Python/Django and AngularJS web applications for clients including Presbyterian Church (USA) and University of Kentucky, boosting user engagement.",
+      "Developed CMS tools, event registration systems, and wellness apps, improving client workflows.",
       "Heavily involved in the full software development lifecycle of a project for University of Kentucky's College of Public Health, including a mobile web app (Fit Face-Off), and interactive wellness tool for team and individual fitness challenges."
     ],
     techStack: "Python, Django, JavaScript (AngularJS, jQuery), Bootstrap, SQL, AWS, Git, PHP, Drupal, WordPress"
