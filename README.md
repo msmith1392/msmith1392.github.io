@@ -10,10 +10,8 @@ It showcases my experience, skills, and work history, and demonstrates my abilit
 - [React](https://react.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vitejs.dev/)
-- [Bootstrap](https://getbootstrap.com/)
 - [React Router](https://reactrouter.com/)
 - [Framer Motion](https://www.framer.com/motion/)
-- [Bootstrap Icons](https://icons.getbootstrap.com/)
 - [EmailJS](https://www.emailjs.com/) (for contact form)
 - [ESLint](https://eslint.org/) & [Prettier](https://prettier.io/) for code quality
 

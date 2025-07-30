@@ -1,4 +1,7 @@
 import React from 'react';
+import { Card as MuiCard, CardContent, CardHeader, IconButton, Box } from '@mui/material';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 type CardProps = {
   title?: React.ReactNode;
@@ -19,67 +22,33 @@ const Card: React.FC<CardProps> = ({
   className = '',
   showBottomToggle = false,
 }) => (
-  <div className={`card ${className}`} style={{ cursor: expandable ? 'pointer' : 'default' }}>
-    <div className="card-body">
-      {title && (
-        <div className="card-header-flex">
-          <h4 className="card-title-no-margin">{title}</h4>
-          {expandable && (
-            <span
-              className="card-text-muted card-toggle"
-              onClick={onToggle}
-              tabIndex={0}
-              role="button"
-              aria-expanded={expanded}
-              onKeyDown={e => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault();
-                  if (onToggle) {
-                    onToggle();
-                  }
-                }
-              }}
-            >
-              {expanded ? (
-                <>
-                  Collapse <span aria-hidden>▲</span>
-                </>
-              ) : (
-                <>
-                  Expand <span aria-hidden>▼</span>
-                </>
-              )}
-            </span>
-          )}
-        </div>
-      )}
-      {(!expandable || expanded) && (
-        <>
-          {children}
-          {/* Bottom toggle */}
-          {expandable && expanded && showBottomToggle && (
-            <div
-              className="card-text-muted card-bottom-toggle"
-              onClick={onToggle}
-              tabIndex={0}
-              role="button"
-              aria-expanded={expanded}
-              onKeyDown={e => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault();
-                  if (onToggle) {
-                    onToggle();
-                  }
-                }
-              }}
-            >
-              Collapse <span aria-hidden>▲</span>
-            </div>
-          )}
-        </>
-      )}
-    </div>
-  </div>
+  <MuiCard className={className} sx={{ cursor: expandable ? 'pointer' : 'default', mb: 2 }}>
+    {title && (
+      <CardHeader
+        title={title}
+        action={
+          expandable && (
+            <IconButton onClick={onToggle} aria-label={expanded ? 'Collapse' : 'Expand'}>
+              {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+            </IconButton>
+          )
+        }
+        sx={{ pb: 0 }}
+      />
+    )}
+    {(expanded || !expandable) && (
+      <CardContent>
+        {children}
+        {expandable && expanded && showBottomToggle && (
+          <Box display="flex" justifyContent="center" mt={2}>
+            <IconButton onClick={onToggle} aria-label="Collapse">
+              <ExpandLessIcon />
+            </IconButton>
+          </Box>
+        )}
+      </CardContent>
+    )}
+  </MuiCard>
 );
 
 export default Card;

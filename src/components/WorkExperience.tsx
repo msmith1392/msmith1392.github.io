@@ -1,3 +1,4 @@
+import { Box, Typography, Container } from '@mui/material';
 import React, { useState } from 'react';
 import Card from './Card';
 import FadeInSection from './FadeInSection';
@@ -116,53 +117,51 @@ const calculateDuration: (start: string, end: string) => string = (start: string
 const WorkExperience: React.FC = () => {
   const [expanded, setExpanded] = useState<number | null>(null);
 
-  const handleToggle: (index: number) => void = (index: number): void => {
+  const handleToggle = (index: number): void => {
     setExpanded(expanded === index ? null : index);
   };
 
   return (
-    <section className="container text-center">
+    <Container maxWidth="md" sx={{ mt: 4 }}>
       <FadeInSection>
-        <h2 className="mb-4">Work Experience</h2>
-        <div className="row justify-content-center">
-          <div className="col-lg-10">
-            {experiences.map((exp: Experience, index: number) => (
-              <Card
-                key={index}
-                expandable
-                expanded={expanded === index}
-                onToggle={() => handleToggle(index)}
-                className="mb-3"
-                showBottomToggle
-                title={
-                  <div>
-                    <div className="card-entry-title">{exp.jobTitle}</div>
-                    <div className="card-entry-organization">{exp.company}</div>
-                    <div className="card-entry-location">{exp.location}</div>
-                    <div className="card-entry-dates">
-                      {exp.startDate} - {exp.endDate} {' '} ({calculateDuration(exp.startDate, exp.endDate)})
-                    </div>
-                  </div>
-                }
-              >
-                {expanded === index && (
-                  <>
-                    <ul className="work-experience-list">
-                      {exp.description.map((point: string, i: number) => (
-                        <li key={i}>{point}</li>
-                      ))}
-                    </ul>
-                    <p className="work-experience-tech">
-                      <strong>Tech Stack:</strong> {exp.techStack}
-                    </p>
-                  </>
-                )}
-              </Card>
-            ))}
-          </div>
-        </div>
+        <Typography variant="h4" align="center" gutterBottom>
+          Work Experience
+        </Typography>
+        {experiences.map((exp, index) => (
+          <Box key={index} mb={3}>
+            <Card
+              expandable
+              expanded={expanded === index}
+              onToggle={() => handleToggle(index)}
+              showBottomToggle
+              title={
+                <Box>
+                  <Typography variant="h6" className="card-entry-title">{exp.jobTitle}</Typography>
+                  <Typography className="card-entry-organization">{exp.company}</Typography>
+                  <Typography className="card-entry-location">{exp.location}</Typography>
+                  <Typography className="card-entry-dates">
+                    {exp.startDate} - {exp.endDate} ({calculateDuration(exp.startDate, exp.endDate)})
+                  </Typography>
+                </Box>
+              }
+            >
+              {expanded === index && (
+                <>
+                  <ul className="work-experience-list">
+                    {exp.description.map((point, i) => (
+                      <li key={i}>{point}</li>
+                    ))}
+                  </ul>
+                  <Typography className="work-experience-tech" sx={{ mt: 2 }}>
+                    <strong>Tech Stack:</strong> {exp.techStack}
+                  </Typography>
+                </>
+              )}
+            </Card>
+          </Box>
+        ))}
       </FadeInSection>
-    </section>
+    </Container>
   );
 };
 

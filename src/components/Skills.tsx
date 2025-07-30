@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "./Card";
 import FadeInSection from "./FadeInSection";
 import AccordionSection from "./AccordionSection";
@@ -17,7 +17,7 @@ const skillSections: SkillSection[] = [
   },
   {
     header: "Frameworks",
-    body: "Spring Boot, Quarkus, Django, GWT, Gin, React, Svelte, Angular, .NET, Bootstrap, Tailwind",
+    body: "Spring Boot, Quarkus, Django, GWT, Gin, React, Svelte, Angular, .NET, Material UI, Tailwind",
     id: "Frameworks",
   },
   {
@@ -37,25 +37,32 @@ const skillSections: SkillSection[] = [
   },
 ];
 
-const Skills: React.FC = () => (
-  <section className="container text-center">
-    <FadeInSection>
-      <h2 className="mb-4">Technical Skills</h2>
-      <Card>
-        <div className="accordion mx-auto skills-accordion-max-width" id="skillsAccordion">
+const Skills: React.FC = () => {
+  const [expanded, setExpanded] = useState<string | false>(false);
+
+  const handleChange = (panel: string) => {
+    setExpanded(expanded === panel ? false : panel);
+  };
+
+  return (
+    <section>
+      <FadeInSection>
+        <h2 style={{ textAlign: "center", marginBottom: "1rem" }}>Technical Skills</h2>
+        <Card>
           {skillSections.map((section: SkillSection) => (
             <AccordionSection
               key={section.id}
               header={section.header}
-              body={section.body}
+              body={<span>{section.body}</span>}
               id={section.id}
-              parentId="skillsAccordion"
+              expanded={expanded === section.id}
+              onChange={handleChange}
             />
           ))}
-        </div>
-      </Card>
-    </FadeInSection>
-  </section>
-);
+        </Card>
+      </FadeInSection>
+    </section>
+  );
+};
 
 export default Skills;

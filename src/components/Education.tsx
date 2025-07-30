@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Card from "./Card";
 import FadeInSection from "./FadeInSection";
+import { Box, Typography, Container } from "@mui/material";
 
 type EducationEntry = {
   degree: string;
@@ -8,7 +9,7 @@ type EducationEntry = {
   location: string;
   year: string;
   projectsAndHonors?: string[];
-}
+};
 
 const educationData: EducationEntry[] = [
   {
@@ -28,46 +29,42 @@ const educationData: EducationEntry[] = [
 const Education: React.FC = () => {
   const [expanded, setExpanded] = useState<number | null>(null);
 
-  const handleToggle: (index: number) => void = (index: number): void => {
+  const handleToggle = (index: number): void => {
     setExpanded(expanded === index ? null : index);
   };
 
   return (
-    <section className="container text-center">
+    <Container maxWidth="md" sx={{ textAlign: "center", mt: 4 }}>
       <FadeInSection>
-        <h2 className="mb-4">Education</h2>
-        <div className="row justify-content-center">
-          <div className="col-lg-10">
-            {educationData.map((edu, idx) => (
-              <Card
-                key={idx}
-                expandable
-                expanded={expanded === idx}
-                onToggle={() => handleToggle(idx)}
-                className="mb-3"
-                showBottomToggle
-                title={
-                  <div>
-                    <div className="card-entry-title">{edu.degree}</div>
-                    <div className="card-entry-organization">{edu.school}</div>
-                    <div className="card-entry-location">{edu.location}</div>
-                    <div className="card-entry-dates">{edu.year}</div>
-                  </div>
-                }
-              >
-                {expanded === idx && edu.projectsAndHonors && edu.projectsAndHonors.length > 0 && (
-                  <ul className="work-experience-list">
-                    {edu.projectsAndHonors.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
-                )}
-              </Card>
-            ))}
-          </div>
-        </div>
+        <Typography variant="h4" gutterBottom>Education</Typography>
+        {educationData.map((edu, idx) => (
+          <Box key={idx} mb={3}>
+            <Card
+              expandable
+              expanded={expanded === idx}
+              onToggle={() => handleToggle(idx)}
+              showBottomToggle
+              title={
+                <Box>
+                  <Typography variant="h6" className="card-entry-title">{edu.degree}</Typography>
+                  <Typography className="card-entry-organization">{edu.school}</Typography>
+                  <Typography className="card-entry-location">{edu.location}</Typography>
+                  <Typography className="card-entry-dates">{edu.year}</Typography>
+                </Box>
+              }
+            >
+              {expanded === idx && edu.projectsAndHonors && edu.projectsAndHonors.length > 0 && (
+                <ul className="work-experience-list">
+                  {edu.projectsAndHonors.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              )}
+            </Card>
+          </Box>
+        ))}
       </FadeInSection>
-    </section>
+    </Container>
   );
 };
 
