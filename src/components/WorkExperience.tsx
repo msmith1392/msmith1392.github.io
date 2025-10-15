@@ -25,14 +25,16 @@ const experiences: Experience[] = [
     startDate: "March 2019",
     endDate: "Present",
     description: [
-      "Delivered features across multiple FEMA PrepToolkit modules, including Unified Reporting Tool (URT), Radiological Emergency Preparedness Program (REPP) Exercises, and Homeland Security Exercise and Evaluation Program (HSEEP) tools used by local, regional, federal, and private partners.",
-      "Led annual updates to URT assessment systems, aligning with fiscal year requirements.",
-      "Modernized legacy apps during the transition from max.gov to PrepToolkit, including Threat and Hazard Identification and Risk Assessment (THIRA), Comprehensive Preparedness Guide (CPG), National Incident Management System (NIMS), and Urban Area Working Group (UAWG).",
-      "Collaborated on architectural decisions and led code reviews across both legacy GWT modules and modern Svelte-based services, ensuring technical consistency and maintainability across the stack.",
-      "Supported containerized Java microservices built with Quarkus and deployed via Podman.",
-      "Provided mentorship to junior developers by demonstrating established code quality standards, reviewing PRs, and supporting architectural understanding across legacy and modern codebases."
+      "Delivered core modules of the Preparedness Toolkit (PrepToolkit), including URT, REPP, and HSEEP, used by federal, state, and private partners to track and assess preparedness.",
+      "Enhanced URT reporting across THIRA, CPG, NIMS, and UAWG frameworks, aligning outputs with FEMA’s evolving compliance and fiscal-year requirements.",
+      "Designed and implemented Spring-based REST APIs integrated with Liferay 7.2 portlets and GWT front-end components, following layered architecture principles (Data → Service → API → Presentation) for scalability and maintainability.",
+      "Modernized legacy GWT/Liferay portlets into Svelte and REST-driven micro frontends, reducing maintenance overhead and improving frontend performance.",
+      "Supported backend modernization with Spring Boot microservices, containerized via Podman, integrated with MySQL, and managed via Flyway migrations.",
+      "Delivered automated document and data exports using Docmosis, OpenCSV, and Apache POI, streamlining FEMA reporting and compliance workflows.",
+      "Led peer code reviews and mentored junior developers, improving overall code quality and team technical proficiency.",
+      "Integrated Spring Web Security with Liferay's role-based permissions, ensuring secure access control across legacy and modern systems."
     ],
-    techStack: "Java, Spring Boot, Gradle, Quarkus, Google Web Toolkit (GWT), MySQL, Liferay 7, Apache HTTP Server, JavaScript/TypeScript, Svelte, Node.js, npm, AWS Lambda, Git"
+    techStack: "Java, Spring Boot, Gradle, Quarkus, Google Web Toolkit (GWT), MySQL, Flyway, Liferay 7, Apache HTTP Server, JavaScript/TypeScript, Svelte, Node.js, npm, AWS Lambda, Git, Podman"
   },
   {
     jobTitle: "Applications Developer",
@@ -41,13 +43,11 @@ const experiences: Experience[] = [
     startDate: "March 2017",
     endDate: "March 2019",
     description: [
-      "Maintained and enhanced enterprise logistics systems used across UPS ground operations.",
-      "Developed UI features and backend logic for a real-time transportation visibility and logistics system.",
-      "Collaborated across teams to implement and test new features from requirements through deployment.",
-      "Translated requirements into discrete rules for the Drools inference engine, streamlining complex logic processing.",
-      "Conducted performance tuning initiatives using JMeter and Roadrunner to optimize logistics workflows. Identified and resolved bottlenecks in real-time transportation tracking systems.",
-      "Delivered features on a three-week agile sprint cycle.",
-      "Provided 24/7 production support, ensuring minimal downtime and rapid issue resolution, contributing to overall system reliability."
+      "Maintained and enhanced enterprise logistics systems, improving reliability and operational efficiency across UPS ground operations.",
+      "Developed UI features and backend logic for a real-time transportation visibility platform, enabling faster decision-making.",
+      "Translated requirements into Drools rules, streamlining complex business logic processing and reducing manual intervention.",
+      "Conducted performance tuning with JMeter and Roadrunner, resolving bottlenecks and ensuring mission-critical system uptime.",
+      "Delivered features in three-week agile sprints and provided 24/7 production support, minimizing downtime."
     ],
     techStack: "Java, Spring Framework, Maven/Gradle, Drools (BRMS), WebLogic, ActiveMQ, SQL Server, TFVC"
   },
@@ -58,12 +58,11 @@ const experiences: Experience[] = [
     startDate: "March 2016",
     endDate: "March 2017",
     description: [
-      "Managed multiple client projects simultaneously using GitHub Flow for efficient deployment and version control.",
-      "Delivered Python/Django and AngularJS web applications for clients including Presbyterian Church (USA) and University of Kentucky, boosting user engagement.",
-      "Developed CMS tools, event registration systems, and wellness apps, improving client workflows.",
-      "Heavily involved in the full software development lifecycle of a project for University of Kentucky's College of Public Health, including a mobile web app (Fit Face-Off), and interactive wellness tool for team and individual fitness challenges."
+      "Delivered Python/Django and AngularJS web applications for clients including Presbyterian Church (USA) and University of Kentucky, improving user engagement.",
+      "Developed CMS tools, event registration systems, and wellness apps, streamlining client workflows.",
+      "Managed multiple client projects using GitHub Flow, ensuring timely delivery and version control consistency."
     ],
-    techStack: "Python, Django, JavaScript (AngularJS, jQuery), Bootstrap, SQL, AWS, Git, PHP, Drupal, WordPress"
+    techStack: "Python, Django, JavaScript (AngularJS, jQuery), Bootstrap, AWS, Git, PHP, Drupal"
   },
   {
     jobTitle: "Programming Analyst",
@@ -72,10 +71,9 @@ const experiences: Experience[] = [
     startDate: "March 2015",
     endDate: "March 2016",
     description: [
-      "Contributed to KFG's Electronic Data Interchange (EDI) platform, EDITRACE, by developing backend Python components for its translation, validation, and mapping engine in close collaboration with the Business Analyst and broader development team.",
-      "Built tools to process and validate data in a variety of formats, including XML, X12, EDIFACT, CSV, Excel, Tradacom, JSON, and IDoc, and assisted with managing data flow to and from databases.",
-      "Analyzed EDI processes in real-time production environments with other developers to identify and resolve transaction errors.",
-      "Implemented a web-based console for users to inspect and analyze any aspect of the EDI process in real time."
+      "Developed Python components for EDITRACE, KFG's EDI platform, enhancing translation, validation, and mapping functionality.",
+      "Built tools to process and validate data in multiple formats (XML, X12, EDIFACT, CSV, Excel, Tradacom, JSON, IDoc), improving data quality and workflow efficiency.",
+      "Implemented a web-based console for real-time analysis of the EDI process, reducing troubleshooting time and improving end-user insight."
     ],
     techStack: "Python, EDI (X12, XML, EDIFACT, Tradacoms, JSON, IDOC), Bootstrap, Git"
   }

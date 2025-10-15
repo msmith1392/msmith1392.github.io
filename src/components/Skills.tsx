@@ -16,23 +16,23 @@ const skillSections: SkillSection[] = [
     id: "Languages",
   },
   {
-    header: "Frameworks",
+    header: "Frameworks & Libraries",
     body: "Spring Boot, Quarkus, Django, GWT, Gin, React, Svelte, Angular, .NET, Bootstrap, Tailwind",
     id: "Frameworks",
   },
   {
-    header: "CMS & Platforms",
-    body: "Liferay, Drupal, AWS (Lambda, S3), Apache HTTP Server, MySQL, Postgres, SQL Server",
+    header: "CMS, Platforms & Databases",
+    body: "Liferay, Drupal, AWS (Lambda, S3), Apache HTTP Server, MySQL, PostgreSQL, SQL Server, Flyway migrations",
     id: "CMSPlatforms",
   },
   {
-    header: "DevOps & Tools",
-    body: "Git, GitHub Flow, Maven, Gradle, npm, Node.js, go modules, JMeter, ActiveMQ, WebLogic, Docker, Podman, Kubernetes",
+    header: "DevOps, Tools & Microservices",
+    body: "Git, GitHub Flow, Maven, Gradle, npm, Node.js, go modules, JMeter, ActiveMQ, WebLogic, Docker, Podman, Kubernetes, containerized microservices",
     id: "DevTools",
   },
   {
-    header: "Other",
-    body: "Remote Collaboration, Agile/Scrum, CI/CD Pipelines, gRPC, net/http, Legacy System Modernization",
+    header: "Other Skills",
+    body: "Remote Collaboration, Agile/Scrum, CI/CD Pipelines, gRPC, net/http, Legacy System Modernization, Mentoring & Code Reviews, Performance Tuning, REST API Design",
     id: "Other",
   },
 ];

@@ -17,9 +17,9 @@ const educationData: EducationEntry[] = [
     location: "Richmond, KY",
     year: "2015",
     projectsAndHonors: [
-      "Developed a ticket management system for a fictional movie theater, implementing core features using HTML, JavaScript, CSS, PHP, and SQL. Delivered end-to-end functionality and thorough documentation.",
-      "Designed and implemented an inventory management system enabling admins to perform full CRUD operations on a product catalog tailored for Amazon marketplace integration.",
-      "Built a content management system for EKU's Department of Computer Science using Apache, PHP, and MySQL. Created detailed requirements and design specification reports to support ongoing departmental use.",
+      "Developed a ticket management system for a fictional movie theater using HTML, JavaScript, CSS, PHP, and SQL, delivering end-to-end functionality with thorough documentation.",
+      "Designed and implemented an inventory management system enabling full CRUD operations on a product catalog for Amazon marketplace integration.",
+      "Built a content management system for EKU's Department of Computer Science using Apache, PHP, and MySQL, including detailed requirements and design specification reports to support ongoing departmental use.",
       "Inducted into Upsilon Pi Epsilon, the international honor society for the computing and information disciplines."
     ]
   }
