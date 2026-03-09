@@ -19,60 +19,45 @@ const About: React.FC = () => {
       header: "Professional Overview",
       body: (
         <>
-          Full-Stack Software Engineer with {yearsOfExperienceTotal}+ years experience modernizing and delivering enterprise systems in federal and private sectors.
-          Expert in <strong>Java</strong> (<strong>Spring Boot, Quarkus, Liferay, GWT</strong>) and <strong>JavaScript/TypeScript</strong> (<strong>React, Svelte, Angular</strong>), with a proven record on mission-critical FEMA systems, including the <strong>Preparedness Toolkit (PrepToolkit)</strong> and <strong>Unified Reporting Tool (URT)</strong>.
+          Senior Software Engineer with {yearsOfExperienceTotal}+ years of experience specializing in building, modernizing, and delivering secure, scalable enterprise systems across federal and private sectors.
+          Expert in <strong>Java (Spring Boot)</strong>, <strong>C# (.NET)</strong>, and <strong>Python (Django)</strong> and modern <strong>TypeScript</strong> frameworks, with a proven record designing RESTful APIs, leading legacy modernization initiatives, and delivering containerized microservices built around API-driven, event-driven, and layered system design patterns.
+          Deep involvement in mission-critical FEMA platforms including <strong>PrepToolkit</strong> and <strong>URT</strong>, with {yearsOfExperienceAtPresentCompany}+ years translating complex federal compliance requirements into distributed, maintainable architectures.
+          Actively exploring <strong>LLM integration</strong> and <strong>Retrieval-Augmented Generation (RAG)</strong> architectures.
         </>
       ),
       id: "ProfessionalOverview",
     },
     {
-      header: "Core Competencies",
+      header: "FEMA & Federal Work",
       body: (
         <>
-          Skilled in designing scalable <strong>RESTful APIs</strong>, modernizing legacy applications, implementing containerized microservices with <strong>Docker/Podman</strong>, and managing relational databases (<strong>MySQL, PostgreSQL, SQL Server</strong>) with <strong>Flyway migrations</strong>.
-          Experienced mentoring teams and driving maintainability, performance, and technical excellence in fully remote, agile environments.
+          Over {yearsOfExperienceAtPresentCompany}+ years supporting FEMA preparedness platforms at <strong>4 Arrows Consulting, Inc.</strong>, delivering features across <strong>PrepToolkit</strong> and <strong>URT</strong>, driving legacy modernization from <strong>Liferay/GWT</strong> to <strong>Svelte</strong> micro-frontends, designing distributed session logic for concurrent federal users, and translating complex compliance requirements (<strong>THIRA/SPR, CPG, NIMS, UAWG</strong>) into scalable technical solutions.
         </>
       ),
-      id: "CoreCompetencies",
+      id: "FEMAWork",
     },
     {
-      header: "FEMA Experience",
+      header: "Earlier Career",
       body: (
         <>
-          At <strong>4 Arrows Consulting, Inc.</strong>, I have spent {yearsOfExperienceAtPresentCompany}+ years as a developer and remote contributor for FEMA's <strong>PrepToolkit</strong> platform.
-          I deliver features across multiple modules, lead annual updates to URT assessment systems, modernize legacy apps, and collaborate on architectural decisions and code reviews across both legacy GWT modules and modern Svelte-based services.
-          I also help support containerized Java microservices and mentor junior developers.
+          Prior to federal work, built a broad foundation across enterprise logistics, client-facing consulting, and data engineering.
+          At <strong>UPS</strong>, maintained and enhanced large-scale real-time transportation visibility systems in a 24/7 high-throughput environment, applying performance tuning and business rules engine expertise at enterprise scale.
+          At <strong>Apax Software</strong>, delivered full-stack web applications across multiple industries, developing the client communication and modular architecture skills that carry through to today.
+          At <strong>Knowledge Facilitations Group</strong>, engineered Python-based data transformation pipelines and real-time monitoring dashboards for EDI systems: an early foundation in backend data engineering and operational observability.
         </>
       ),
-      id: "FEMAExperience",
+      id: "EarlierCareer",
     },
     {
-      header: "Previous Roles",
+      header: "Proven Track Record",
       body: (
         <>
-          My background includes enterprise logistics systems at <strong>UPS</strong>, where I maintained and enhanced large-scale logistics platforms, developed UI and backend features, and optimized performance for real-time tracking systems.
-          At <strong>Apax Software</strong>, I delivered Python/Django and AngularJS web applications, developed CMS tools, and managed multiple client projects.
+          Designed RESTful APIs, led legacy modernization initiatives, delivered containerized services in production, and mentored engineering teams.
+          Automated enterprise reporting workflows reducing processing time from hours to minutes.
+          Strong focus on maintainability, performance, and clean architecture across every engagement.
         </>
       ),
-      id: "PreviousRoles",
-    },
-    {
-      header: "Technical Highlights",
-      body: (
-        <>
-          <strong>Java (Spring Boot, Quarkus)</strong>, <strong>MySQL, PostgreSQL, SQL Server</strong>, <strong>Flyway</strong>, JavaScript/TypeScript (Svelte, React, Angular), GWT, Bootstrap, Tailwind, Gradle, Maven, Git, <strong>Docker, Podman</strong>, AWS, Liferay 7, Node.js, npm
-        </>
-      ),
-      id: "TechnicalHighlights",
-    },
-    {
-      header: "Personal Statement",
-      body: (
-        <>
-          I thrive in remote, cross-functional teams, enjoy mentoring developers, and consistently deliver high-impact, maintainable solutions leveraging my expertise in full-stack development, microservices, and modern enterprise systems.
-        </>
-      ),
-      id: "PersonalStatement",
+      id: "ProvenTrackRecord",
     },
   ];
 

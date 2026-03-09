@@ -1,10 +1,12 @@
 import React from "react";
 import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import type { Location } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Header from "./components/Header";
 import About from "./components/About";
 import WorkExperience from "./components/WorkExperience";
 import Skills from "./components/Skills";
+import Projects from "./components/Projects";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -13,13 +15,14 @@ import ScrollToTop from "./components/ScrollToTop";
 import "./styles/styles.css";
 
 const AnimatedRoutes: React.FC = () => {
-  const location = useLocation();
+  const location: Location = useLocation();
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<PageTransition><About /></PageTransition>} />
         <Route path="/work-experience" element={<PageTransition><WorkExperience /></PageTransition>} />
         <Route path="/skills" element={<PageTransition><Skills /></PageTransition>} />
+        <Route path="/projects" element={<PageTransition><Projects /></PageTransition>} />
         <Route path="/education" element={<PageTransition><Education /></PageTransition>} />
         <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
         <Route path="*" element={<PageTransition><h2>404 Not Found</h2></PageTransition>} />
