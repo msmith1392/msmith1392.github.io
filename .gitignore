@@ -22,3 +22,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Local Claude context (private, not for public repo)
+CLAUDE.local.md

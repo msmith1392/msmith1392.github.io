@@ -31,7 +31,7 @@ const About: React.FC = () => {
       header: "FEMA & Federal Work",
       body: (
         <>
-          Over {yearsOfExperienceAtPresentCompany}+ years supporting FEMA preparedness platforms at <strong>4 Arrows Consulting, Inc.</strong>, delivering features across <strong>PrepToolkit</strong> and <strong>URT</strong>, driving legacy modernization from <strong>Liferay/GWT</strong> to <strong>Svelte</strong> micro-frontends, designing distributed session logic for concurrent federal users, and translating complex compliance requirements (<strong>THIRA/SPR, CPG, NIMS, UAWG</strong>) into scalable technical solutions.
+          Over {yearsOfExperienceAtPresentCompany}+ years supporting FEMA preparedness platforms at <strong>4 Arrows Consulting, Inc.</strong>, delivering features across <strong>PrepToolkit</strong> and <strong>URT</strong>, architecting a serverless AWS portal (S3/CloudFront hosted Svelte frontend) to replace legacy GWT portlets and unify access across <strong>PrepToolkit, OneResponder, RTLT, and IRIS</strong>, and translating complex compliance requirements (<strong>THIRA/SPR, CPG, NIMS, UAWG</strong>) into scalable technical solutions.
         </>
       ),
       id: "FEMAWork",

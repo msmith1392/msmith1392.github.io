@@ -25,10 +25,10 @@ const experiences: Experience[] = [
     startDate: "March 2019",
     endDate: "Present",
     description: [
-      "Cross-Stack Feature Ownership: Delivered complex features across backend (Spring Boot/.NET), database, and frontend layers within FEMA preparedness platforms (PrepToolkit, URT), ensuring cohesive integration between APIs, data models, and user interfaces.",
+      "Cross-Stack Feature Ownership: Delivered complex features across backend (Spring Boot/.NET), database, and frontend layers within FEMA preparedness platforms (PrepToolkit, OneResponder, RTLT, IRIS), ensuring cohesive integration between APIs, data models, and user interfaces.",
       "System Architecture & Presence: Spearheaded the implementation of a real-time presence tracking system for the Unified Reporting Tool (URT); independently designed and optimized distributed session logic (polling/timeouts) to ensure data integrity for concurrent federal users.",
-      "Modernization & Performance: Drove the strategic migration of legacy Liferay portlets to Svelte micro-frontends, resulting in measurable frontend performance improvements and a more maintainable codebase.",
-      "Development Workflow Improvements: Introduced containerized development environments (Docker/Podman) and implemented Flyway-based database migrations to improve consistency across environments and reduce configuration drift. Regularly conduct peer code reviews to reinforce clean architecture and maintainable code practices.",
+      "Serverless Portal Ownership: Replaced legacy GWT portlets with a standalone serverless AWS application (S3/CloudFront hosted Svelte frontend) serving as a unified access portal for FEMA preparedness platforms (PrepToolkit, OneResponder, RTLT, IRIS), organizing the component hierarchy (containers, forms, cards) and structuring the provider layer per application to keep each platform's data context cleanly separated.",
+      "Development Workflow Improvements: Leveraged containerized development environments (Docker/Podman) and Flyway-based database migrations to improve consistency across environments and reduce configuration drift. Regularly conduct peer code reviews to reinforce clean architecture and maintainable code practices.",
       "Stakeholder Alignment: Translate complex FEMA business requirements (THIRA/SPR, CPG, NIMS, UAWG) into scalable technical solutions, coordinating closely with project leads to ensure all features align with federal compliance and security standards.",
       "Operational Excellence: Automated enterprise reporting workflows (Docmosis/Apache POI), reducing processing time from hours to minutes and directly improving operational efficiency for national exercise programs."
     ],
