@@ -1,39 +1,40 @@
 import React, { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
-import Card from './Card';
 import FadeInSection from './FadeInSection';
 
 const SERVICE_ID: string = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
 const TEMPLATE_ID: string = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
 const USER_ID: string = import.meta.env.VITE_EMAILJS_USER_ID as string;
 
-const Contact: React.FC = () => {
-  // eslint-disable-next-line @typescript-eslint/typedef
-  const formRef = useRef<HTMLFormElement>(null);
-  const [isSending, setIsSending] = useState(false);
-  const [feedback, setFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
+type Feedback = {
+  type: 'success' | 'error';
+  message: string;
+};
 
-  function isFormValid(): boolean {
+const Contact: React.FC = () => {
+  const formRef: React.RefObject<HTMLFormElement | null> = useRef<HTMLFormElement>(null);
+  const [isSending, setIsSending] = useState<boolean>(false);
+  const [feedback, setFeedback] = useState<Feedback | null>(null);
+
+  const isFormValid: () => boolean = (): boolean => {
     if (!formRef.current) {
       return false;
     }
+
     const nameInput: Element | RadioNodeList | null = formRef.current.elements.namedItem('name');
     const emailInput: Element | RadioNodeList | null = formRef.current.elements.namedItem('email');
-    const messageInput: Element | RadioNodeList | null = formRef.current.elements.namedItem('message');
-    const websiteInput: Element | RadioNodeList | null = formRef.current.elements.namedItem('website');
+    const messageInput: Element | RadioNodeList | null =
+      formRef.current.elements.namedItem('message');
+    const websiteInput: Element | RadioNodeList | null =
+      formRef.current.elements.namedItem('website');
 
-    // Honeypot anti-spam: should be empty, if not then bot detected
-    if (
-      websiteInput &&
-      websiteInput instanceof HTMLInputElement &&
-      websiteInput.value
-    ) {
+    // Honeypot anti-spam: if filled, it's a bot
+    if (websiteInput instanceof HTMLInputElement && websiteInput.value) {
       setFeedback({ type: 'error', message: 'Submission flagged as spam.' });
       return false;
     }
 
-    const nameValue: string =
-      nameInput instanceof HTMLInputElement ? nameInput.value.trim() : '';
+    const nameValue: string = nameInput instanceof HTMLInputElement ? nameInput.value.trim() : '';
     const emailValue: string =
       emailInput instanceof HTMLInputElement ? emailInput.value.trim() : '';
     const messageValue: string =
@@ -51,102 +52,134 @@ const Contact: React.FC = () => {
       setFeedback({ type: 'error', message: 'Message must be at least 10 characters.' });
       return false;
     }
+
     setFeedback(null);
     return true;
-  }
+  };
 
-  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e): void => {
     e.preventDefault();
-    if (!formRef.current) {
-      return;
-    }
-    if (!isFormValid()) {
+    if (!formRef.current || !isFormValid()) {
       return;
     }
 
     setIsSending(true);
 
-    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, USER_ID)
-      .then(() => {
+    emailjs
+      .sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, USER_ID)
+      .then((): void => {
         setFeedback({ type: 'success', message: 'Your message has been sent. Thank you!' });
         setIsSending(false);
         formRef.current?.reset();
       })
-      .catch(() => {
+      .catch((): void => {
         setFeedback({
           type: 'error',
-          message: "Couldn't send message. Please try again or use the email icon in the footer.",
+          message: "Couldn't send message. Please try again or reach out via email in the footer.",
         });
         setIsSending(false);
       });
   };
 
   return (
-    <section className="container text-center">
-      <FadeInSection>
-        <h2 className="mb-4">Contact Me</h2>
-        <div className="row justify-content-center">
-          <div className="col-12 mx-auto contact-card-max-width">
-            <Card>
-              <h5 className="card-title mb-4">Send a Message</h5>
-              {feedback && (
-                <div className={`alert alert-${feedback.type === 'success' ? 'success' : 'danger'}`}>
-                  {feedback.message}
-                </div>
-              )}
-              <form ref={formRef} onSubmit={handleSubmit} autoComplete="off">
-                {/* Hidden honeypot field for spam prevention */}
+    <section id="contact" className="bg-gray-50 py-20 px-6">
+      <div className="max-w-3xl mx-auto">
+        <FadeInSection>
+          {/* Section label */}
+          <p className="text-xs font-semibold uppercase tracking-widest text-blue-500 mb-3">
+            Contact
+          </p>
+
+          <h2 className="text-3xl font-bold text-navy mb-4">Get in touch</h2>
+          <p className="text-gray-600 text-lg leading-relaxed mb-10">
+            Open to new opportunities, interesting problems. Drop me a message and I'll get back to
+            you.
+          </p>
+
+          <div className="bg-white border border-gray-200 rounded-xl p-6 sm:p-8">
+            {/* Feedback banner */}
+            {feedback && (
+              <div
+                className={`mb-6 px-4 py-3 rounded-lg text-sm font-medium ${
+                  feedback.type === 'success'
+                    ? 'bg-green-50 text-green-800 border border-green-200'
+                    : 'bg-red-50 text-red-800 border border-red-200'
+                }`}
+              >
+                {feedback.message}
+              </div>
+            )}
+
+            <form ref={formRef} onSubmit={handleSubmit} autoComplete="off">
+              {/* Honeypot */}
+              <input
+                type="text"
+                name="website"
+                className="hidden"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+              />
+
+              {/* Name */}
+              <div className="mb-5">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">
+                  Your name
+                </label>
                 <input
                   type="text"
-                  name="website"
-                  className="d-none"
-                  tabIndex={-1}
-                  autoComplete="off"
-                  aria-hidden="true"
+                  id="name"
+                  name="name"
+                  required
+                  minLength={2}
+                  pattern="[a-zA-Z\s'-]{2,}"
+                  className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
                 />
-                <div className="mb-3">
-                  <label htmlFor="name" className="form-label text-start w-100">Your Name</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="name"
-                    name="name"
-                    required
-                    minLength={2}
-                    pattern="[a-zA-Z\s'-]{2,}"
-                  />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="email" className="form-label text-start w-100">Your Email</label>
-                  <input
-                    type="email"
-                    className="form-control"
-                    id="email"
-                    name="email"
-                    required
-                  />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="message" className="form-label text-start w-100">Your Message</label>
-                  <textarea
-                    className="form-control"
-                    id="message"
-                    name="message"
-                    rows={4}
-                    required
-                    minLength={10}
-                  ></textarea>
-                </div>
-                {/* Timestamp for reference */}
-                <input type="hidden" name="time" value={new Date().toLocaleString()} />
-                <button type="submit" className="btn btn-success w-100" disabled={isSending}>
-                  {isSending ? 'Sending...' : 'Submit'}
-                </button>
-              </form>
-            </Card>
+              </div>
+
+              {/* Email */}
+              <div className="mb-5">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">
+                  Your email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                />
+              </div>
+
+              {/* Message */}
+              <div className="mb-6">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1.5">
+                  Your message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  required
+                  minLength={10}
+                  className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none"
+                />
+              </div>
+
+              {/* Timestamp */}
+              <input type="hidden" name="time" value={new Date().toLocaleString()} />
+
+              <button
+                type="submit"
+                disabled={isSending}
+                className="w-full bg-navy hover:bg-navy-light text-white font-semibold py-3 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSending ? 'Sending...' : 'Send message'}
+              </button>
+            </form>
           </div>
-        </div>
-      </FadeInSection>
+        </FadeInSection>
+      </div>
     </section>
   );
 };

@@ -1,23 +1,24 @@
-import React, { ReactNode, useEffect, useRef } from 'react';
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
 
 type FadeInSectionProps = {
   children: ReactNode;
 };
 
 const FadeInSection: React.FC<FadeInSectionProps> = ({ children }) => {
-  // eslint-disable-next-line @typescript-eslint/typedef
-  const ref = useRef<HTMLDivElement | null>(null);
+  const ref: React.RefObject<HTMLDivElement | null> = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
-  useEffect(() => {
-    const observer: IntersectionObserver = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.disconnect();
+  useEffect((): (() => void) => {
+    const observer: IntersectionObserver = new IntersectionObserver(
+      ([entry]: IntersectionObserverEntry[]): void => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
       }
-    });
+    );
 
     const currentRef: HTMLDivElement | null = ref.current;
-
     if (currentRef) {
       observer.observe(currentRef);
     }
@@ -30,7 +31,12 @@ const FadeInSection: React.FC<FadeInSectionProps> = ({ children }) => {
   }, []);
 
   return (
-    <div ref={ref} className="fade-in">
+    <div
+      ref={ref}
+      className={`transition-all duration-700 ease-out ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+      }`}
+    >
       {children}
     </div>
   );
