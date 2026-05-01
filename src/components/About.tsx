@@ -45,8 +45,7 @@ const About: React.FC = () => {
           and delivering secure, scalable enterprise systems across federal and private sectors.
           Expert in <strong>Java (Spring Boot)</strong>, <strong>C# (.NET)</strong>, and{' '}
           <strong>Python (Django)</strong> with a proven record designing RESTful APIs, leading
-          legacy modernization, and delivering containerized microservices. Actively exploring LLM
-          integration and Retrieval-Augmented Generation (RAG) architectures.
+          legacy modernization, and delivering containerized microservices.
         </>
       ),
     },
@@ -57,8 +56,9 @@ const About: React.FC = () => {
         <>
           {federalYears}+ years supporting FEMA preparedness platforms at{' '}
           <strong>4 Arrows Consulting, Inc.</strong>, delivering features across{' '}
-          <strong>PrepToolkit</strong> and <strong>URT</strong>, driving legacy modernization from{' '}
-          <strong>Liferay/GWT</strong> to <strong>Svelte</strong> micro-frontends, designing
+          <strong>PrepToolkit</strong> and <strong>URT</strong>, delivering the Svelte frontend for
+          a serverless AWS access portal covering <strong>PrepToolkit</strong>,{' '}
+          <strong>RTLT</strong>, <strong>RIS</strong>, and <strong>OneResponder</strong>, designing
           distributed session logic for concurrent federal users, and translating compliance
           requirements (<strong>THIRA/SPR, CPG, NIMS, UAWG</strong>) into scalable technical
           solutions.
